@@ -1,5 +1,5 @@
 Open5GCore deployment on Red Hat Openshift Virtualization with Service Mesh for CNFs and VNFs<br>
-Background on Open5GS: https://open5gs.org/open5gs/docs/guide/01-quickstart/ <br>
+Background: https://open5gs.org/open5gs/docs/guide/01-quickstart/ <br>
 
 Pre-Requistes: OCP with OSM and CNV installed and configured.<br>
 (1) oc new-project open5gs<br><br>
