@@ -18,3 +18,13 @@ Note-2: Add open5gs to OSM ServiceMeshMemberRoll under istio-system ns (your ist
 (4.4) Launch vm: oc create -f ubuntuvm.yaml <br>
 (4.5) Go to VM Console under OCP Web UI Workloads>Virtualization>Virtualization>Virtual Machines>ubuntu2004vm1 Console and finish installation.<br>
 (4.6) upload ueransim-vm-update.sh to vm and execute. <br>
+![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/UERANSIM.png)<br>
+
+(5) Deploy istio manifests and make webui accessible over istio ingress-gw 
+![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/Open5GSWebUI.png)<br>
+
+(6) Run ./nr-gnb -c open5gs-gnb.yaml in UERAMSIM VM Terminal1 
+![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/ueransim-gnb.png)<br>
+
+(7) Run ./nr-ue -c open5gs-ue.yaml in UERANSIM VM Terminal2
+![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/ueransim-ue.png)<br>
