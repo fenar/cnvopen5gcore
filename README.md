@@ -1,8 +1,7 @@
-Open5GS deployment on Red Hat Openshift with Service Mesh<br>
+Open5GS deployment on Red Hat Openshift Virtualization with Service Mesh for CNFs and VNFs<br>
 Background on Open5GS: https://open5gs.org/open5gs/docs/guide/01-quickstart/ <br>
 
-Pre-Requistes: OCP with OSM installed and configured.<br>
-Ref: https://docs.openshift.com/container-platform/4.7/service_mesh/v2x/installing-ossm.html <br>
+Pre-Requistes: OCP with OSM and CNV installed and configured.<br>
 (1) oc new-project open5gs<br><br>
 (2) oc create -f load-sctp-module.yaml<br>
 Note-1: Wait for machine config to be applied on all worker nodes and all worker nodes come back in to ready state.<br>
