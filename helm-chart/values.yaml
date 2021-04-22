@@ -1,0 +1,51 @@
+# Default values for open5gs-epc-helm.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+open5gs:
+  image:
+    repository: registry.gitlab.com/infinitydon/registry/open5gs-aio
+    pullPolicy: IfNotPresent
+    tag: "v2.2.2"
+
+webui:
+  image:
+    repository: registry.gitlab.com/infinitydon/registry/open5gs-webui
+    pullPolicy: IfNotPresent
+    tag: "v2.2.2"
+  ingress:
+    enabled: false
+    ## Ingress annotations done as key:value pairs
+    ## For a full list of possible ingress annotations, please see
+    ## ref: https://github.com/kubernetes/ingress-nginx/blob/master/docs/user-guide/nginx-configuration/annotations.md
+    ##
+    ## If tls is set to true, annotation ingress.kubernetes.io/secure-backends: "true" will automatically be set
+    # annotations:
+    #   kubernetes.io/ingress.class: nginx
+
+    hosts:
+      - name: open5gs-epc.local
+        paths: ["/"]
+        ## Set this to true in order to enable TLS on the ingress record
+        tls: false
+
+        ## Optionally specify the TLS hosts for the ingress record
+        ## Useful when the Ingress controller supports www-redirection
+        ## If not specified, the above host name will be used
+        # tlsHosts:
+        # - www.open5gs-epc.local
+        # - open5gs-epc.local
+
+        ## If TLS is set to true, you can declare what secret will store the key/certificate for TLS
+        # tlsSecret: open5gs-epc.local-tls    
+
+dnn: internet  
+
+amf:
+  mcc: 208
+  mnc: 93
+  tac: 7
+
+# Primary/Native kubernetes interface
+k8s:
+ interface: eth0

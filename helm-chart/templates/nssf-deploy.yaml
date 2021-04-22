@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: open5gs-nssf
+  labels:
+    epc-mode: nssf
+spec:
+  selector:
+    epc-mode: nssf
+  ports:
+    - protocol: TCP
+      port: 80 
+      targetPort: 80  
+---  
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: open5gs-nssf-deployment  
+  labels:
+    epc-mode: nssf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      epc-mode: nssf
+  template:
+    metadata:
+      annotations:
+        sidecar.istio.io/inject: "true"
+      labels:
+        epc-mode: nssf
+    spec:   
+      containers:
+        - name: nssf
+          image: "{{ .Values.open5gs.image.repository }}:{{ .Values.open5gs.image.tag }}"
+          imagePullPolicy: {{ .Values.open5gs.image.pullPolicy }}
+          command: ["open5gs-nssfd", "-c", "/open5gs/config-map/nssf.yaml"]
+          volumeMounts:
+          - name: open5gs-nssf-config
+            mountPath: /open5gs/config-map/nssf.yaml
+            subPath: "nssf.yaml"          
+      volumes:
+        - name: open5gs-nssf-config
+          configMap:
+            name: open5gs-nssf-config           

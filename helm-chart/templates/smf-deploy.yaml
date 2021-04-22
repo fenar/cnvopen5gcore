@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: open5gs-smf
+  labels:
+    epc-mode: smf
+spec:
+  selector:
+    epc-mode: smf
+  ports:
+    - protocol: TCP
+      port: 80 
+      targetPort: 80  
+---  
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: open5gs-smf-deployment
+  labels:
+    epc-mode: smf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      epc-mode: smf
+  template:
+    metadata:       
+      annotations:
+        sidecar.istio.io/inject: "true"
+      labels:
+        epc-mode: smf
+    spec:   
+      containers:
+      - name: smf
+        image: "{{ .Values.open5gs.image.repository }}:{{ .Values.open5gs.image.tag }}"
+        imagePullPolicy: {{ .Values.open5gs.image.pullPolicy }}
+        command: ["/bin/sh", "-c"]
+        args:
+        - open5gs-smfd -c /open5gs/config-map/smf.yaml;
+        volumeMounts:
+          - name: open5gs-smf-config
+            mountPath: /open5gs/config-map/smf.yaml
+            subPath: "smf.yaml"                                       
+      volumes:
+        - name: open5gs-smf-config
+          configMap:
+            name: open5gs-smf-config                

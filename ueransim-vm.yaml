@@ -1,0 +1,78 @@
+apiVersion: kubevirt.io/v1alpha3
+kind: VirtualMachine
+metadata:
+  name: ueransimvm1
+  annotations:
+    k8s.v1.cni.cncf.io/networks: a-bridge-network
+spec:
+  running: true
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        kubevirt.io/domain: ueramsimvm1
+    spec:
+      domain:
+        clock:
+          timer:
+            hpet:
+              present: false
+            hyperv: {}
+            pit:
+              tickPolicy: delay
+            rtc:
+              tickPolicy: catchup
+          utc: {}
+        cpu:
+          cores: 1
+          sockets: 2
+          threads: 1
+        devices:
+          disks:
+          - cdrom:
+              bus: sata
+            name: ubuntu-guest-tools
+          - bootOrder: 2
+            cdrom:
+              bus: sata
+            name: cdrom
+          - bootOrder: 1
+            disk:
+              bus: virtio
+            name: disk-1
+          inputs:
+          - bus: usb
+            name: tablet
+            type: tablet
+          interfaces:
+          - masquerade: {}
+            model: virtio
+            name: nic-0
+        features:
+          acpi: {}
+          apic: {}
+          hyperv:
+            relaxed: {}
+            spinlocks:
+              spinlocks: 8191
+            vapic: {}
+        machine:
+          type: pc-q35-rhel8.2.0
+        resources:
+          requests:
+            memory: 8Gi
+      hostname: ueramsimvm1
+      networks:
+      - name: nic-0
+        pod: {}
+      terminationGracePeriodSeconds: 3600
+      volumes:
+        - name: cdrom
+          persistentVolumeClaim:
+            claimName: iso-ubuntu2004-dv
+        - name: disk-1
+          persistentVolumeClaim:
+            claimName: ueramsimhd1
+        - containerDisk:
+            image: quay.io/kubevirt/virtio-container-disk
+          name: ubuntu-guest-tools

@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: open5gs-udr
+  labels:
+    epc-mode: udr
+spec:
+  selector:
+    epc-mode: udr
+  ports:
+    - protocol: TCP
+      port: 80   
+      targetPort: 80
+---  
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: open5gs-udr-deployment
+  labels:
+    epc-mode: udr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      epc-mode: udr
+  template:
+    metadata:
+      annotations:
+        sidecar.istio.io/inject: "true"
+      labels:
+        epc-mode: udr
+    spec:   
+      containers:
+        - name: udr
+          image: "{{ .Values.open5gs.image.repository }}:{{ .Values.open5gs.image.tag }}"
+          imagePullPolicy: {{ .Values.open5gs.image.pullPolicy }}
+          command: ["open5gs-udrd", "-c", "/open5gs/config-map/udr.yaml"]
+          volumeMounts:
+          - name: open5gs-udr-config
+            mountPath: /open5gs/config-map/udr.yaml
+            subPath: "udr.yaml"          
+      volumes:
+        - name: open5gs-udr-config
+          configMap:
+            name: open5gs-udr-config

@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: open5gs-upf-config
+  labels:
+    epc-mode: upf
+data:
+  upf.yaml: |
+    #logger:
+       #file: /var/log/open5gs/upf.log
+    upf:
+        pfcp:
+           dev: {{ .Values.k8s.interface }}
+        gtpu:
+           dev: {{ .Values.k8s.interface }}
+        subnet:
+          - addr: 10.45.0.1/16
+            dnn: {{ .Values.dnn }}

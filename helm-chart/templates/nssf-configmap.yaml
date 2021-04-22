@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: open5gs-nssf-config
+  labels:
+    epc-mode: nssf
+data:
+  nssf.yaml: |
+    #logger:
+       #file: /var/log/open5gs/nssf.log   
+    nssf:
+      sbi:     
+      - addr: 0.0.0.0
+        advertise: open5gs-nssf
+      nsi:
+      - addr: open5gs-nrf
+        port: 80
+        s_nssai:
+          sst: 1        
+    nrf:
+     sbi:
+      name: open5gs-nrf

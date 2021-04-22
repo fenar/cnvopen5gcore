@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: open5gs-nrf
+  labels:
+    epc-mode: nrf
+spec:
+  selector:
+    epc-mode: nrf
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+---    
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: open5gs-nrf-deployment
+  labels:
+    epc-mode: nrf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      epc-mode: nrf
+  template:
+    metadata:
+      annotations:
+        sidecar.istio.io/inject: "true"
+      labels:
+        epc-mode: nrf
+    spec:  
+      containers:
+        - name: nrf
+          image: "{{ .Values.open5gs.image.repository }}:{{ .Values.open5gs.image.tag }}"
+          imagePullPolicy: {{ .Values.open5gs.image.pullPolicy }}
+          command: ["open5gs-nrfd", "-c", "/open5gs/config-map/nrf.yaml"]
+          volumeMounts:
+            - name: open5gs-nrf-config
+              mountPath: /open5gs/config-map/nrf.yaml
+              subPath: "nrf.yaml"
+      volumes:
+        - name: open5gs-nrf-config
+          configMap:
+            name: open5gs-nrf-config
+
