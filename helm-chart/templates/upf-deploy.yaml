@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: upf-open5gs
+  name: open5gs-upf
   labels:
     epc-mode: upf
 spec:
@@ -12,7 +12,7 @@ spec:
       port: 8805
       targetPort: 8805    
 ---  
-apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: open5gs-upf-deployment
@@ -56,5 +56,5 @@ spec:
           configMap:
             name: open5gs-upf-config
         - name: dev-net-tun
-          hostPath:
-            path: /dev/net/tun
+          persistentVolumeClaim:
+            claimName: upfhd1

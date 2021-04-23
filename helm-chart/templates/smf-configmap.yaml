@@ -32,5 +32,5 @@ data:
       name: open5gs-nrf 
     upf:
       pfcp:
-        - name: upf-open5gs
+        - name: open5gs-upf
           dnn: {{ .Values.dnn }}

@@ -13,6 +13,7 @@ oc adm policy add-scc-to-user hostmount-anyuid -z default
 #oc get secret -n open5gs
 #pwd
 cd helm-chart
+oc create -f upfhd1-pvc.yaml
 echo "Deploying Open5Gs"
 helm -n open5gs install -f values.yaml 5gcore ./
-echo "The End"
+echo "Enjoy!"
