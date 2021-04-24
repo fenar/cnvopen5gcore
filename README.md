@@ -27,3 +27,5 @@ Note-2: Add open5gs to OSM ServiceMeshMemberRoll under istio-system ns (your ist
 
 (7) Run ./nr-ue -c open5gs-ue.yaml in UERANSIM VM Terminal2
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/ueransim-ue2.png)<br>
+
+(8) Clear Enviroment run ./1-delete5gcore.sh <br>
