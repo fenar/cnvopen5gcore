@@ -19,13 +19,13 @@ Note-2: Add open5gs to OSM ServiceMeshMemberRoll under istio-system ns (your ist
 (4.6) upload ueransim-vm-update.sh to vm and execute. <br>
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/UERANSIM2.png)<br>
 
-(5) Deploy istio manifests and make webui accessible over istio ingress-gw 
+(5) Deploy istio manifests and make webui accessible over istio ingress-gw and add your eu imsi (see ueransim/open5gs-ue.yaml) to system so your ue registration will be allowed.
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/Open5GSWebUI.png)<br>
 
-(6) Run ./nr-gnb -c open5gs-gnb.yaml in UERAMSIM VM Terminal1 
+(6) Git clone this rep in to kubevirt-vm and go to ueransim folder, run ./nr-gnb -c open5gs-gnb.yaml in UERAMSIM VM Terminal1 
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/ueransim-gnb2.png)<br>
 
-(7) Run ./nr-ue -c open5gs-ue.yaml in UERANSIM VM Terminal2
+(7) Under ueransim folder, run ./nr-ue -c open5gs-ue.yaml in UERANSIM VM Terminal2
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/ueransim-ue2.png)<br>
 
 (8) Clear Enviroment run ./1-delete5gcore.sh <br>
