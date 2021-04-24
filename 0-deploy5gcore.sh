@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#Author: fenar
 echo -e "Configuring privileged access - Sorry it is what is....\n"
 echo
 oc adm policy add-scc-to-user anyuid -z default
