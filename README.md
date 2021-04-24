@@ -3,7 +3,7 @@ Background: https://open5gs.org/open5gs/docs/guide/01-quickstart/ <br>
 
 Pre-Requistes: OCP with OSM and CNV installed and configured.<br>
 (1) oc new-project open5gs<br><br>
-(2) oc create -f load-sctp-module.yaml<br>
+(2) oc create -f sctpmod.yaml<br>
 Note-1: Wait for machine config to be applied on all worker nodes and all worker nodes come back in to ready state.<br>
 Check with; ''oc get nodes'' <br>
 Note-2: Add open5gs to OSM ServiceMeshMemberRoll under istio-system ns (your istio cp ns)<br>
