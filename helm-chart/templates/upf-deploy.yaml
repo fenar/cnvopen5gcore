@@ -34,8 +34,6 @@ spec:
         - name: upf
           image: "{{ .Values.open5gs.image.repository }}:{{ .Values.open5gs.image.tag }}"
           imagePullPolicy: {{ .Values.open5gs.image.pullPolicy }}
-          securityContext:
-            privileged: true
           command: ["/bin/sh", "-c"]
           args:
           - ip tuntap add name ogstun mode tun;
