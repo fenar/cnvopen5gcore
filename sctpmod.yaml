@@ -3,7 +3,7 @@ kind: MachineConfig
 metadata:
   labels:
     machineconfiguration.openshift.io/role: worker
-  name: load-sctp-module
+  name: sctpmodule
 spec:
   config:
     ignition:
