@@ -23,7 +23,7 @@ Note-2: Add open5gs to OSM ServiceMeshMemberRoll under istio-system ns (your ist
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/Open5GSWebUI.png)<br>
 
 (6) Run ./nr-gnb -c open5gs-gnb.yaml in UERAMSIM VM Terminal1 
-![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/ueransim-gnb.png)<br>
+![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/ueransim-gnb2.png)<br>
 
 (7) Run ./nr-ue -c open5gs-ue.yaml in UERANSIM VM Terminal2
-![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/ueransim-ue.png)<br>
+![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/ueransim-ue2.png)<br>
