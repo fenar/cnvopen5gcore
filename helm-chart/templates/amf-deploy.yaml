@@ -25,7 +25,8 @@ spec:
     epc-mode: amf
   ports:
     - protocol: TCP
-      port: 80   
+      port: 80
+      nodePort: 30480   
       targetPort: 80      
 ---  
 apiVersion: apps/v1
