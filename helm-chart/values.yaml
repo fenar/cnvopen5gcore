@@ -39,6 +39,12 @@ webui:
         ## If TLS is set to true, you can declare what secret will store the key/certificate for TLS
         # tlsSecret: open5gs-epc.local-tls    
 
+ueransim:
+  image:
+    repository: docker.io/efatnar/open5gcore
+    pullPolicy: IfNotPresent
+    tag: "latest"
+
 dnn: internet  
 
 amf:
