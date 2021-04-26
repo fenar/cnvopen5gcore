@@ -54,5 +54,5 @@ spec:
           configMap:
             name: open5gs-upf-config
         - name: dev-net-tun
-          persistentVolumeClaim:
-            claimName: upfhd1
+          hostPath:
+            path: /dev/net/tun
