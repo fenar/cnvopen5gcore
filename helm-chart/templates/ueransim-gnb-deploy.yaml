@@ -21,7 +21,7 @@ spec:
         imagePullPolicy: {{ .Values.ueransim.image.pullPolicy }}
         image: "{{ .Values.ueransim.image.repository }}:{{ .Values.ueransim.image.tag }}" 
         command: ["./nr-gnb", "-c", "/open5gs/config-map/ueransim-gnb-configmap.yaml"]
-          volumeMounts:
+        volumeMounts:
           - name: ueransim-gnb-config
             mountPath: /open5gs/config-map/ueransim-gnb-configmap.yaml
             subPath: "ueransim-gnb-configmap.yaml"
