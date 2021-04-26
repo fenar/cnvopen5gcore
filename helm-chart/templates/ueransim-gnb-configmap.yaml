@@ -2,23 +2,8 @@ kind: ConfigMap
 apiVersion: v1
 metadata:
   name: ueransim-gnb-config
-  namespace: open5gs
-  selfLink: /api/v1/namespaces/open5gs/configmaps/ueransim-gnb-config
-  uid: d9816a4f-bb1c-4771-aca2-3d4124e2f005
-  resourceVersion: '8162058'
-  creationTimestamp: '2021-04-26T21:52:52Z'
-  managedFields:
-    - manager: kubectl-create
-      operation: Update
-      apiVersion: v1
-      time: '2021-04-26T21:52:52Z'
-      fieldsType: FieldsV1
-      fieldsV1:
-        'f:data':
-          .: {}
-          'f:open5gs-gnb.yaml': {}
 data:
-  open5gs-gnb.yaml: |
+  ueransim-gnb-configmap.yaml: |
     mcc: '208'          # Mobile Country Code value
     mnc: '93'           # Mobile Network Code value (2 or 3 digits)
 
