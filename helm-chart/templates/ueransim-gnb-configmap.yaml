@@ -17,8 +17,8 @@ data:
 
     # List of AMF address information
     amfConfigs:
-      - address: 172.33.23.124
-        port: 30412
+      - address: amf-open5gs-sctp.open5gs.svc.cluster.local
+        port: 38412
 
     # List of supported S-NSSAIs by this gNB
     slices:
