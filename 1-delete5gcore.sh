@@ -6,5 +6,4 @@ echo
 cd helm-chart
 echo "Removing Open5Gs"
 helm -n open5gs uninstall 5gcore
-#oc delete -f upfhd1-pvc.yaml
 echo "The End"
