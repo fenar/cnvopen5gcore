@@ -21,6 +21,7 @@ metadata:
   labels:
     epc-mode: amf
 spec:
+  type: NodePort
   selector:
     epc-mode: amf
   ports:
