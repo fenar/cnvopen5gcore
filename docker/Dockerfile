@@ -31,7 +31,8 @@ STOPSIGNAL SIGRTMIN+3
 
 CMD ["/sbin/init"]
 
-RUN git clone https://github.com/aligungr/UERANSIM && \
+RUN systemctl restart snapd.service && \
+    git clone https://github.com/aligungr/UERANSIM && \
     cd UERANSIM && make
 
 WORKDIR /UERANSIM/build
