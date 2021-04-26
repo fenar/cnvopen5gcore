@@ -27,7 +27,7 @@ data:
 
     # List of gNB IP addresses for Radio Link Simulation
     gnbSearchList:
-      - 192.168.50.106
+      - 10.0.2.2
 
     # Initial PDU sessions to be established
     sessions:
