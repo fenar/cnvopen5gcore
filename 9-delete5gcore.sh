@@ -3,7 +3,7 @@
 echo -e "World is About to End!....\n"
 echo
 
-cd helm-chart
+cd 5gcore-helm
 echo "Removing Open5Gs"
 helm -n open5gs uninstall 5gcore
 echo "The End"
