@@ -1,15 +1,44 @@
-apiVersion: v1
 kind: ConfigMap
+apiVersion: v1
 metadata:
   name: ueransim-gnb-config
-  labels:
-    epc-mode: ueransim-gnb
+  namespace: open5gs
+  selfLink: /api/v1/namespaces/open5gs/configmaps/ueransim-gnb-config
+  uid: d9816a4f-bb1c-4771-aca2-3d4124e2f005
+  resourceVersion: '8162058'
+  creationTimestamp: '2021-04-26T21:52:52Z'
+  managedFields:
+    - manager: kubectl-create
+      operation: Update
+      apiVersion: v1
+      time: '2021-04-26T21:52:52Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:data':
+          .: {}
+          'f:open5gs-gnb.yaml': {}
 data:
-  ueransim-gnb.yaml: |
-    ueransim-gnb:
-      sbi:
-      - addr: 0.0.0.0
-        advertise: ueransim-gnb
-    amf:
-     sbi:
-      name: open5gs-amf
+  open5gs-gnb.yaml: |
+    mcc: '208'          # Mobile Country Code value
+    mnc: '93'           # Mobile Network Code value (2 or 3 digits)
+
+    nci: '0x000000010'  # NR Cell Identity (36-bit)
+    idLength: 32        # NR gNB ID length in bits [22...32]
+    tac: 7              # Tracking Area Code
+
+    linkIp: 192.168.50.106
+    ngapIp: 192.168.50.106
+    gtpIp: 192.168.50.106
+
+    # List of AMF address information
+    amfConfigs:
+      - address: 172.27.103.17
+        port: 30412
+
+    # List of supported S-NSSAIs by this gNB
+    slices:
+      - sst: 1
+        sd: 1
+
+    # Indicates whether or not SCTP stream number errors should be ignored.
+    ignoreStreamIds: true
