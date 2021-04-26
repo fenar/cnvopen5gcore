@@ -34,9 +34,12 @@ spec:
         - name: upf
           image: "{{ .Values.open5gs.image.repository }}:{{ .Values.open5gs.image.tag }}"
           imagePullPolicy: {{ .Values.open5gs.image.pullPolicy }}
+          securityContext:
+            privileged: true
           command: ["/bin/sh", "-c"]
           args:
-          - ip tuntap add name ogstun mode tun;
+          - ln -s /dev/net/tun /dev/tun;
+            ip tuntap add name ogstun mode tun;
             ip addr add 10.45.0.1/16 dev ogstun;
             sysctl -w net.ipv6.conf.all.disable_ipv6=1;
             ip link set ogstun up;
