@@ -9,8 +9,9 @@ USER root
 RUN apt-get update && \
    apt-get -yq dist-upgrade && \
    apt-get --no-install-recommends -qqy install make g++ libsctp-dev lksctp-tools iproute2 python3-pip &&\
-   apt-get install snap && \
-   snap install cmake --classic && \
+   apt-get install snap
+   
+RUN snap install cmake --classic && \
    git clone https://github.com/aligungr/UERANSIM && \
    cd UERANSIM && make
 
