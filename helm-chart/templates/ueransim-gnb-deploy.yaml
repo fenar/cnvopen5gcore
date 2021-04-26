@@ -20,6 +20,8 @@ spec:
       - name: ueransim-gnb
         imagePullPolicy: {{ .Values.ueransim.image.pullPolicy }}
         image: "{{ .Values.ueransim.image.repository }}:{{ .Values.ueransim.image.tag }}" 
+        securityContext:
+          privileged: true
         command: ["./nr-gnb", "-c", "/open5gs/config-map/ueransim-gnb-configmap.yaml"]
         volumeMounts:
           - name: ueransim-gnb-config
