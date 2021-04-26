@@ -17,7 +17,7 @@ data:
 
     # List of AMF address information
     amfConfigs:
-      - address: 172.27.103.17
+      - address: 172.27.103.17 # Replace this IP Address with your routable ocp worker node ip
         port: 30412
 
     # List of supported S-NSSAIs by this gNB
