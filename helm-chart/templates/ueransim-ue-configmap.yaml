@@ -5,7 +5,6 @@ metadata:
 data:
   open5gs-ue.yaml: |
     # IMSI number of the UE. IMSI = [MCC|MNC|MSISDN] (In total 15 or 16 digits)
-    #supi: 'imsi-901700000000001'
     supi: 'imsi-208930000000001'
     # Mobile Country Code value of HPLMN
     mcc: '208'
@@ -27,7 +26,7 @@ data:
 
     # List of gNB IP addresses for Radio Link Simulation
     gnbSearchList:
-      - 10.0.2.2
+      - 10.0.2.2 #<- Change this ip to ueransim gnb service ip-port
 
     # Initial PDU sessions to be established
     sessions:
