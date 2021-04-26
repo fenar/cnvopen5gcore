@@ -2,12 +2,19 @@ apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
   name: ueransim-gnb 
+  labels:
+    epc-mode: ueransim-gnb
 spec:
   replicas: 1
+    selector:
+    matchLabels:
+      epc-mode: ueransim-gnb
   template:
     metadata:
       annotations:
         sidecar.istio.io/inject: "true"
+      labels:
+        epc-mode: ueransim-gnb
     spec:    
       containers:
       - name: ueransim-gnb
