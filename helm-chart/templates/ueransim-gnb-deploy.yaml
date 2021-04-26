@@ -1,3 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ueransim-gnb
+  labels:
+    epc-mode: ueransim-gnb
+spec:
+  type: NodePort
+  selector:
+    epc-mode: ueransim-gnb
+  ports:
+    - protocol: SCTP
+      port: 48412
+      targetPort: 48412
+      nodePort: 40412
+---
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
