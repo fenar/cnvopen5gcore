@@ -20,7 +20,7 @@ spec:
       - name: ueransim-gnb
         imagePullPolicy: {{ .Values.ueransim.image.pullPolicy }}
         image: "{{ .Values.ueransim.image.repository }}:{{ .Values.ueransim.image.tag }}" 
-        command: ["nr-gnb", "-c", "open5gs-gnb.yaml"]
+        command: ["./nr-gnb", "-c", "open5gs-gnb.yaml"]
         env:
         - name: AMF_WORKER_NODEIP
           value: "172.33.23.124"
