@@ -12,6 +12,5 @@ RUN apt-get update && \
    mkdir UERANSIM 
 
 COPY build/ /UERANSIM/
-RUN ls -la /UERANSIM/*
 
 WORKDIR /UERANSIM
