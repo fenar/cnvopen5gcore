@@ -11,6 +11,7 @@ RUN apt-get update && \
    apt-get --no-install-recommends -qqy install make g++ libsctp-dev lksctp-tools iproute2 python3-pip && \
    mkdir UERANSIM 
 
-COPY / UERANSIM/
+COPY build/ /UERANSIM/
+RUN ls -la /UERANSIM/*
 
 WORKDIR /UERANSIM
