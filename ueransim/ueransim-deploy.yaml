@@ -19,7 +19,7 @@ spec:
       containers:
       - name: ueransim-gnb
         imagePullPolicy: IfNotPresent
-        image: "docker.io/efatnar/ueransim:latest" 
+        image: "docker.io/efatnar/ueransim:v1.1" 
         securityContext:
           privileged: true
         command: ["/bin/sh","-c"]
