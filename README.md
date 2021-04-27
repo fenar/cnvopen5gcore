@@ -1,7 +1,7 @@
-## Open5GCore deployment on Red Hat Openshift Virtualization with Service Mesh for CNFs and VNFs<br>
+## Open5GCore deployment on Red Hat Openshift Virtualization (CNF, VNF) <br>
 Background: https://open5gs.org/open5gs/docs/guide/01-quickstart/ <br>
 
-Pre-Requistes: OCP with OSM and CNV (Optional if you like to use UERANSIM as container deployment) installed and configured.<br>
+Pre-Requistes: OCP with OSM and CNV (Optional, if you like to use UERANSIM as container deployment, see Option-B below) installed and configured.<br>
 (1) oc new-project open5gs<br><br>
 (2) oc create -f sctpmod.yaml<br>
 Note-1: Wait for machine config to be applied on all worker nodes and all worker nodes come back in to ready state.<br>
