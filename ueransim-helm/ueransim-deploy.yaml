@@ -43,6 +43,6 @@ spec:
         - name: ueransim-gnb-config
           configMap:
             name: ueransim-gnb-config        
-        - name: ueransim-ue-config
+          name: ueransim-ue-config
           configMap:
             name: ueransim-ue-config  
