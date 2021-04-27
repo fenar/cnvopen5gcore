@@ -1,4 +1,4 @@
-Open5GCore deployment on Red Hat Openshift Virtualization with Service Mesh for CNFs and VNFs<br>
+## Open5GCore deployment on Red Hat Openshift Virtualization with Service Mesh for CNFs and VNFs<br>
 Background: https://open5gs.org/open5gs/docs/guide/01-quickstart/ <br>
 
 Pre-Requistes: OCP with OSM and CNV (Optional if you like to use UERANSIM as container deployment) installed and configured.<br>
@@ -12,7 +12,7 @@ Note-2: Add open5gs to OSM ServiceMeshMemberRoll under istio-system ns (your ist
 (4) Deploy istio manifests and make webui accessible over istio ingress-gw and add your eu imsi (see ueransim/open5gs-ue.yaml) to system so your ue registration will be allowed.
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/Open5GSWebUI.png)<br>
 
----- [OPTION-A Running EURANSIM in a Kubevirt VM]---- <br>
+# ---- [OPTION-A Running EURANSIM in a Kubevirt VM]---- <br>
 (A5) Deploy UE RAN Simulator: 1st create a Ubuntu vm on cnv <br><br>
 (A5.1) Get iso from https://ubuntu.com/download/desktop <br><br>
 (A5.2) virtctl image-upload --uploadproxy-url=https://cdi-uploadproxy-openshift-cnv.apps.acmhub.narlabs.io/ dv iso-ubuntu2004-dv --size=3Gi --image-path=iso/ubuntu-20.04.2.0-desktop-amd64.iso --insecure <br><br>
@@ -28,7 +28,7 @@ Note-2: Add open5gs to OSM ServiceMeshMemberRoll under istio-system ns (your ist
 (A7) Under ueransim folder, run ./nr-ue -c open5gs-ue.yaml in UERANSIM VM Terminal2
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/ueransim-ue2.png)<br>
 
----- [OPTION-B Running EURANSIM as a pod with multiple containers inside]---- <br>
+# ---- [OPTION-B Running EURANSIM as a pod with multiple containers inside]---- <br>
 (B5) Use 1-deployUERANSIM.sh that creates the config maps and ueransim deployment with one pod that has multiple containers (gnb, ue as separate containers inside same pod) <br>
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/ueransim-pod.png)<br>
 
