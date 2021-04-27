@@ -19,7 +19,7 @@ spec:
       containers:
       - name: ueransim-gnb
         imagePullPolicy: IfNotPresent
-        image: "docker.io/efatnar/open5gcore:latest" 
+        image: "docker.io/efatnar/ueransim:latest" 
         securityContext:
           privileged: true
         command: ["/bin/sh","-c"]
