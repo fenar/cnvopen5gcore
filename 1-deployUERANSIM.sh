@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 #Author: fenar
 oc project open5gs
-oc adm policy add-scc-to-user anyuid -z default -n open5gs
-oc adm policy add-scc-to-user hostaccess -z default -n open5gs
-oc adm policy add-scc-to-user hostmount-anyuid -z default -n open5gs
-oc adm policy add-scc-to-user privileged -z default -n open5gs
 cd ueransim
 ## gNB Section
 echo "Preparing gNB config"
