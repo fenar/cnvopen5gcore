@@ -34,15 +34,8 @@ spec:
         securityContext:
           privileged: true
         command: ["/bin/sh","-c"]
-        args: ["sleep 20; echo sleepdone; ./nr-ue -c /open5gs/config-map/ueransim-ue-configmap.yaml"]
-        volumeMounts:
-          - name: ueransim-ue-config
-            mountPath: /open5gs/config-map/ueransim-ue-configmap.yaml
-            subPath: "ueransim-ue-configmap.yaml"
+        args: ["sleep 10; echo sleepdone; ./nr-ue -c open5gs-ue.yaml"]
       volumes:
-        - name: ueransim-ue-config
-          configMap:
-            name: ueransim-ue-config  
         - name: ueransim-gnb-config
           configMap:
             name: ueransim-gnb-config        
