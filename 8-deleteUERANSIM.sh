@@ -2,7 +2,7 @@
 #Author: fenar
 echo -e "Wiping UERANSIM....\n"
 echo
-cd ueransim-helm
+cd ueransim
 echo "Removing UERANSIM Deployment"
 #helm -n open5gs uninstall ueransim
 oc delete -f ueransim-gnb-configmap.yaml

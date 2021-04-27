@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #Author: fenar
 oc project open5gs
-cd ueransim-helm
+cd ueransim
 echo "Preparing gNB config"
 oc get services | grep amf-open5gs-sctp | awk '{print $3}' > amf-ip
 echo "AMF IP:" && cat amf-ip
