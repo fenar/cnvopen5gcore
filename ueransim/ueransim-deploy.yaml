@@ -34,7 +34,7 @@ spec:
         securityContext:
           privileged: true
         command: ["/bin/sh","-c"]
-        args: ["sleep 180; echo sleepdone!; ./nr-ue -c open5gs-ue.yaml"]
+        args: ["sleep 60; echo sleepdone!; ./nr-ue -c open5gs-ue.yaml"]
         volumeMounts:
           - name: ueransim-ue-config
             mountPath: /open5gs/config-map/ueransim-ue-configmap.yaml
