@@ -18,8 +18,8 @@ spec:
     spec:    
       containers:
       - name: ueransim-gnb
-        imagePullPolicy: {{ .Values.ueransim.image.pullPolicy }}
-        image: "{{ .Values.ueransim.image.repository }}:{{ .Values.ueransim.image.tag }}" 
+        imagePullPolicy: IfNotPresent
+        image: "docker.io/efatnar/open5gcore:latest" 
         securityContext:
           privileged: true
         command: ["./nr-gnb", "-c", "/open5gs/config-map/ueransim-gnb-configmap.yaml"]
