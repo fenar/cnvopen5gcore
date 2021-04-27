@@ -41,6 +41,9 @@ spec:
       - name: ueransim-binder
         imagePullPolicy: IfNotPresent
         image: "docker.io/efatnar/ueransim:v1.5" 
+        securityContext:
+          privileged: true
+        command: ["/bin/sh","-c","echo sh nr-binder <ue-tunnel-ip> ping www.google.com"]
       volumes:
         - name: ueransim-gnb-config
           configMap:
