@@ -33,8 +33,9 @@ spec:
         image: "docker.io/efatnar/ueransim:v1.1" 
         securityContext:
           privileged: true
-        command: ["/bin/sh","-c"]
-        args: ["./nr-ue -c /open5gs/config-map/ueransim-ue-configmap.yaml"]
+        #command: ["/bin/sh","-c"]
+        #args: ["./nr-ue -c /open5gs/config-map/ueransim-ue-configmap.yaml"]
+        command: ["./nr-ue -c /open5gs/config-map/ueransim-ue-configmap.yaml"]
         volumeMounts:
           - name: ueransim-ue-config
             mountPath: /open5gs/config-map/ueransim-ue-configmap.yaml
