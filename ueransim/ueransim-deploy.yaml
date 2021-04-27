@@ -34,7 +34,7 @@ spec:
         securityContext:
           privileged: true
         command: ["/bin/sh","-c"]
-        args: ["./nr-ue -c /open5gs/config-map/ueransim-ue-configmap.yaml"]
+        args: ["./nr-ue -c ueransim-ue-configmap.yaml"]
         volumeMounts:
           - name: ueransim-ue-config
             mountPath: /open5gs/config-map/ueransim-ue-configmap.yaml
