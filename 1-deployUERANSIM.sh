@@ -14,5 +14,6 @@ echo "gNB Config:" && cat ueransim-gnb-configmap.yaml
 # helm -n open5gs install -f values.yaml ueransim ./ --debug
 oc create -f ueransim-gnb-configmap.yaml
 oc create -f ueransim-ue-configmap.yaml
-oc create -f ueransim-deploy.yaml
+oc create -f ueransim-gnb-deploy.yaml
+oc create -f ueransim-ue-deploy.yaml
 echo "Enjoy The UERANSIM!"
