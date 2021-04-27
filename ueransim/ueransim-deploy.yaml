@@ -30,7 +30,7 @@ spec:
             subPath: "ueransim-gnb-configmap.yaml"
       - name: ueransim-ue
         imagePullPolicy: IfNotPresent
-        image: "docker.io/efatnar/ueransim:v1.1" 
+        image: "docker.io/efatnar/ueransim:v1.5" 
         securityContext:
           privileged: true
         command: ["/bin/sh","-c","./nr-ue -c open5gs-ue.yaml"]
@@ -40,7 +40,7 @@ spec:
             subPath: "ueransim-ue-configmap.yaml"
       - name: ueransim-binder
         imagePullPolicy: IfNotPresent
-        image: "docker.io/efatnar/ueransim:v1.1" 
+        image: "docker.io/efatnar/ueransim:v1.5" 
         #command: ["/bin/sh","-c","sh nr-binder 10.45.0.2 ping www.google.com"]
         securityContext:
           privileged: true
