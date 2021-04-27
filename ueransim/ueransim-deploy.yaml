@@ -41,9 +41,6 @@ spec:
       - name: ueransim-binder
         imagePullPolicy: IfNotPresent
         image: "docker.io/efatnar/ueransim:v1.5" 
-        securityContext:
-          privileged: true
-        command: ["/bin/sh","-c"]
       volumes:
         - name: ueransim-gnb-config
           configMap:
