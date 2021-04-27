@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   name: ueransim-ue-config
 data:
-  open5gs-ue.yaml: |
+  ueransim-ue-configmap.yaml: |
     # IMSI number of the UE. IMSI = [MCC|MNC|MSISDN] (In total 15 or 16 digits)
     supi: 'imsi-208930000000001'
     # Mobile Country Code value of HPLMN
