@@ -10,11 +10,6 @@ ueransim:
 
 dnn: internet  
 
-amf:
-  mcc: 208
-  mnc: 93
-  tac: 7
-
 # Primary/Native kubernetes interface
 k8s:
  interface: eth0
