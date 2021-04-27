@@ -21,7 +21,8 @@ Note-2: Add open5gs to OSM ServiceMeshMemberRoll under istio-system ns (your ist
 (A5.3) Create vm install target disk:  oc create -f ubuntuvm-pvc.yaml <br><br>
 (A5.4) Launch vm: oc create -f ubuntuvm.yaml <br>
 (A5.5) Go to VM Console under OCP Web UI Workloads>Virtualization>Virtualization>Virtual Machines>ubuntu2004vm1 Console and finish installation.<br>
-(A5.6) upload ueransim-vm-update.sh to vm and execute. <br>
+(A5.6) Follow guidance for ueransim install https://github.com/aligungr/UERANSIM/wiki/Installation. 
+Or use prepeuransimvm.sh to perform install inside your vm.<br>
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/UERANSIM2.png)<br>
 
 (A6) Git clone this rep in to kubevirt-vm and go to ueransim folder, run ./nr-gnb -c open5gs-gnb.yaml in UERAMSIM VM Terminal1 
