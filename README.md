@@ -12,6 +12,8 @@ Note-2: Add open5gs to OSM ServiceMeshMemberRoll under istio-system ns (your ist
 (4) Deploy istio manifests and make webui accessible over istio ingress-gw and add your eu imsi (see ueransim/open5gs-ue.yaml) to system so your ue registration will be allowed.
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/Open5GSWebUI.png)<br>
 
+----
+
 # [OPTION-A Running EURANSIM in a Kubevirt VM]
 (A5) Deploy UE RAN Simulator: 1st create a Ubuntu vm on cnv <br><br>
 (A5.1) Get iso from https://ubuntu.com/download/desktop <br><br>
