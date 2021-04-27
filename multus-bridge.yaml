@@ -1,9 +1,0 @@
-apiVersion: "k8s.cni.cncf.io/v1"
-kind: NetworkAttachmentDefinition
-metadata:
-  name: a-bridge-network
-  annotations:
-    k8s.v1.cni.cncf.io/resourceName: bridge.network.kubevirt.io/br-ex
-spec:
-  config: >-
-    {"name":"a-bridge-network","cniVersion":"0.3.1","plugins":[{"type":"cnv-bridge","bridge":"br-ex","ipam":{}},{"type":"cnv-tuning"}]}
