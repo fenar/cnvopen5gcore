@@ -42,7 +42,6 @@ spec:
         imagePullPolicy: IfNotPresent
         image: "docker.io/efatnar/ueransim:v1.5" 
         command: ["/bin/sh","-c"]
-        #command: ["/bin/sh","-c","sh nr-binder 10.45.0.2 ping www.google.com"]
         securityContext:
           privileged: true
       volumes:
