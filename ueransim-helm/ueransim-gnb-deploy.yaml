@@ -23,7 +23,7 @@ spec:
         securityContext:
           privileged: true
         command: ["./nr-gnb", "-c", "/open5gs/config-map/ueransim-gnb-configmap.yaml"]
-        command: ["./nr-ue", "-c", "/open5gs/config-map/ueransim-ue-configmap.yaml"]
+        #command: ["./nr-ue", "-c", "/open5gs/config-map/ueransim-ue-configmap.yaml"]
         volumeMounts:
           - name: ueransim-gnb-config
             mountPath: /open5gs/config-map/ueransim-gnb-configmap.yaml
