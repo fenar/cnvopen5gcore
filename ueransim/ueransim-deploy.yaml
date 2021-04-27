@@ -38,6 +38,12 @@ spec:
           - name: ueransim-ue-config
             mountPath: /open5gs/config-map/ueransim-ue-configmap.yaml
             subPath: "ueransim-ue-configmap.yaml"
+      - name: ueransim-binder
+        imagePullPolicy: IfNotPresent
+        image: "docker.io/efatnar/ueransim:v1.1" 
+        command: ["/bin/sh","-c","sh nr-binder 10.45.0.2 ping www.google.com"]
+        securityContext:
+          privileged: true
       volumes:
         - name: ueransim-gnb-config
           configMap:
