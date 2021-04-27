@@ -40,9 +40,9 @@ spec:
             mountPath: /open5gs/config-map/ueransim-ue-configmap.yaml
             subPath: "ueransim-ue-configmap.yaml"
       volumes:
+        - name: ueransim-ue-config
+          configMap:
+            name: ueransim-ue-config  
         - name: ueransim-gnb-config
           configMap:
             name: ueransim-gnb-config        
-          name: ueransim-ue-config
-          configMap:
-            name: ueransim-ue-config  
