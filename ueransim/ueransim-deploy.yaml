@@ -34,7 +34,7 @@ spec:
         securityContext:
           privileged: true
         command: ["/bin/sh","-c"]
-        args: ["sleep 10; echo sleepdone; ./nr-ue -c open5gs-ue.yaml"]
+        args: ["sleep 10 && echo sleepdone && ./nr-ue -c open5gs-ue.yaml"]
       volumes:
         - name: ueransim-gnb-config
           configMap:
