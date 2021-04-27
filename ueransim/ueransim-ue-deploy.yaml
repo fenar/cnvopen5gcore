@@ -1,0 +1,34 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: ueransim-ue
+  labels:
+    epc-mode: ueransim-ue
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      epc-mode: ueransim-ue
+  template:
+    metadata:
+      annotations:
+        sidecar.istio.io/inject: "true"
+      labels:
+        epc-mode: ueransim-ue
+    spec:    
+      containers:
+      - name: ueransim-ue
+        imagePullPolicy: IfNotPresent
+        image: "docker.io/efatnar/ueransim:v1.1" 
+        securityContext:
+          privileged: true
+        command: ["/bin/sh","-c"]
+        args: ["./nr-ue -c /open5gs/config-map/ueransim-ue-configmap.yaml"]
+        volumeMounts:
+          - name: ueransim-ue-config
+            mountPath: /open5gs/config-map/ueransim-ue-configmap.yaml
+            subPath: "ueransim-ue-configmap.yaml"
+      volumes:
+        - name: ueransim-ue-config
+          configMap:
+            name: ueransim-ue-config        
