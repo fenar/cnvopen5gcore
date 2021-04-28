@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Author: fenar
-oc project open5gs
+oc project open5gcore
 cd ueransim
 ## gNB Section
 echo "Preparing gNB config"
