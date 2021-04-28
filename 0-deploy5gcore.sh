@@ -9,7 +9,7 @@ oc adm policy add-scc-to-user privileged -z default
 current_dir=$PWD
 cd 5gcore-helm
 echo "Deploying Open5G Core"
-helm install -f values.yaml 5gcorenew ./
+helm install -f values.yaml 5gcore ./
 cd $current_dir
 echo "Creating Istio Ingress Virtual Service"
 oc create -f istio-manifests/open5gsweb.yaml
