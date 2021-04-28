@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: amf-open5gs-sctp
+  name: amf-open5gcore-sctp
   labels:
     epc-mode: amf
 spec:
@@ -17,7 +17,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: open5gs-amf
+  name: open5gcore-amf
   labels:
     epc-mode: amf
 spec:
@@ -33,7 +33,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: open5gs-amf-deployment
+  name: open5gcore-amf-deployment
   labels:
     epc-mode: amf
 spec:
@@ -50,14 +50,14 @@ spec:
     spec:    
       containers:
         - name: amf
-          image: "{{ .Values.open5gs.image.repository }}:{{ .Values.open5gs.image.tag }}"
-          imagePullPolicy: {{ .Values.open5gs.image.pullPolicy }}
+          image: "{{ .Values.open5gcore.image.repository }}:{{ .Values.open5gcore.image.tag }}"
+          imagePullPolicy: {{ .Values.open5gcore.image.pullPolicy }}
           command: ["open5gs-amfd", "-c", "/open5gs/config-map/amf.yaml"]
           volumeMounts:
-          - name: open5gs-amf-config
+          - name: open5gcore-amf-config
             mountPath: /open5gs/config-map/amf.yaml
             subPath: "amf.yaml"
       volumes:
-        - name: open5gs-amf-config
+        - name: open5gcore-amf-config
           configMap:
-            name: open5gs-amf-config
+            name: open5gcore-amf-config
