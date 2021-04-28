@@ -4,9 +4,9 @@
 
 open5gs:
   image:
-    repository: registry.gitlab.com/infinitydon/registry/open5gs-aio
+    repository: docker.io/efatnar/ueransim
     pullPolicy: IfNotPresent
-    tag: "v2.2.2"
+    tag: "v1.1"
 
 webui:
   image:
