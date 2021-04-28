@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: open5gcore-amf-config
+  name: open5gs-amf-config
   labels:
     epc-mode: amf
 data:
