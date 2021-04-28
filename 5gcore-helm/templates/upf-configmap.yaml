@@ -6,8 +6,6 @@ metadata:
     epc-mode: upf
 data:
   upf.yaml: |
-    #logger:
-       #file: /var/log/open5gs/upf.log
     upf:
         pfcp:
            dev: {{ .Values.k8s.interface }}
