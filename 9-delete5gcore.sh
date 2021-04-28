@@ -5,6 +5,6 @@ echo
 echo "Creating Istio Ingress Virtual Service"
 oc delete -f istio-manifests/open5gsweb.yaml
 cd 5gcore-helm
-echo "Removing Open5Gs"
+echo "Removing Open5GCore"
 helm uninstall 5gcorenew
 echo "The End"
