@@ -1,6 +1,4 @@
-# Default values for open5gs-epc-helm.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
+# Default values for 5gcore-helm.
 
 open5gs:
   image:
