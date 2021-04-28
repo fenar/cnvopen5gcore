@@ -54,10 +54,10 @@ spec:
           imagePullPolicy: {{ .Values.open5gcore.image.pullPolicy }}
           command: ["open5gs-amfd", "-c", "/open5gs/config-map/amf.yaml"]
           volumeMounts:
-          - name: open5gcore-amf-config
+          - name: open5gs-amf-config
             mountPath: /open5gs/config-map/amf.yaml
             subPath: "amf.yaml"
       volumes:
-        - name: open5gcore-amf-config
+        - name: open5gs-amf-config
           configMap:
-            name: open5gcore-amf-config
+            name: open5gs-amf-config
