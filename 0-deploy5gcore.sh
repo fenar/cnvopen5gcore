@@ -8,5 +8,5 @@ oc adm policy add-scc-to-user hostmount-anyuid -z default
 oc adm policy add-scc-to-user privileged -z default 
 cd 5gcore-helm
 echo "Deploying Open5Gs"
-helm install -f values.yaml 5gcore ./
+helm install -f values.yaml 5gcorenew ./
 echo "Enjoy The Open 5G Core!"
