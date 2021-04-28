@@ -5,7 +5,7 @@ Background: <br>
 
 ----
 Prerequisites: 
-OCP with OSM and CNV (Optional, if you like to use UERANSIM as container deployment, see Option-B below) installed and configured.<br>
+OCP with OSM and CNV (Optional, if you like to use UERANSIM as container deployment, see "Option-B Shot Way" below) installed and configured.<br>
 
 ----
 
