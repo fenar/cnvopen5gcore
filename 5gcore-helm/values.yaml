@@ -1,6 +1,6 @@
 # Default values for 5gcore-helm.
 
-open5gs:
+open5gcore:
   image:
     repository: docker.io/efatnar/open5gcore
     pullPolicy: IfNotPresent
@@ -13,10 +13,6 @@ webui:
     tag: "v1.1"
   ingress:
     enabled: false
-    hosts:
-      - name: open5gs-epc.local
-        paths: ["/"]
-        tls: false
 
 dnn: internet  
 
