@@ -12,7 +12,7 @@ Note-1: Wait for machine config to be applied on all worker nodes and all worker
 Note-2: Add open5gs to OSM ServiceMeshMemberRoll under istio-system ns (your istio cp ns)<br>
 (3) Run 0-deploy5gcore.sh that creates the role bindings and deploy helm-charts for you. <br><br>
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/Open5GCoreServiceMesh2.png)<br>
-(4) Deploy istio manifests and make webui accessible over istio ingress-gw and add your imsi (see ueransim/ueransim-ue-configmap.yaml) to system so your ue registration will be allowed.
+(4) Deploy istio manifests (oc create -f istio-manifests/open5gsweb.yaml) and make webui accessible over istio ingress-gw and add your imsi (see ueransim/ueransim-ue-configmap.yaml) to system so your ue registration will be allowed.
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/Open5GSWebUI.png)<br>
 
 ----
