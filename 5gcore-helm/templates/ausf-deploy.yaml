@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: open5gcore-ausf
+  name: open5gs-ausf
   labels:
     epc-mode: ausf
 spec:
@@ -15,7 +15,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: open5gcore-ausf-deployment
+  name: open5gs-ausf-deployment
   labels:
     epc-mode: ausf
 spec:
