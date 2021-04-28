@@ -35,12 +35,12 @@ spec:
       volumes:
       - name: mongodb-persistent-storage
         persistentVolumeClaim:
-          claimName: mongodb-pv-claim-new
+          claimName: mongodb-pv-claim
 ---
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: mongodb-pv-volume-new
+  name: mongodb-pv-volume
   labels:
     type: local
 spec:
@@ -54,7 +54,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mongodb-pv-claim-new
+  name: mongodb-pv-claim
 spec:
   accessModes:
     - ReadWriteOnce
