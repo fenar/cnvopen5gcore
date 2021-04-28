@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: amf-open5gcore-sctp
+  name: amf-open5gs-sctp
   labels:
     epc-mode: amf
 spec:
@@ -17,7 +17,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: open5gcore-amf
+  name: open5gs-amf
   labels:
     epc-mode: amf
 spec:
@@ -33,7 +33,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: open5gcore-amf-deployment
+  name: open5gs-amf-deployment
   labels:
     epc-mode: amf
 spec:
