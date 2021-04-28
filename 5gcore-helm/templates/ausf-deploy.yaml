@@ -36,10 +36,10 @@ spec:
           imagePullPolicy: {{ .Values.open5gcore.image.pullPolicy }}
           command: ["open5gs-ausfd", "-c", "/open5gs/config-map/ausf.yaml"]
           volumeMounts:
-          - name: open5gcore-ausf-config
+          - name: open5gs-ausf-config
             mountPath: /open5gs/config-map/ausf.yaml
             subPath: "ausf.yaml"
       volumes:
-        - name: open5gcore-ausf-config
+        - name: open5gs-ausf-config
           configMap:
-            name: open5gcore-ausf-config
+            name: open5gs-ausf-config
