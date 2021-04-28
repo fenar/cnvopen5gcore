@@ -12,7 +12,7 @@ OCP with OSM and CNV (Optional, if you like to use UERANSIM as container deploym
 (1) oc new-project open5gcore<br>
 (2) oc create -f sctpmod.yaml<br>
 Note-1: Wait for machine config to be applied on all worker nodes and all worker nodes come back in to ready state. Check with; ''oc get nodes'' <br>
-Note-2: Add open5gs to OSM ServiceMeshMemberRoll under istio-system ns (your istio cp ns)<br>
+Note-2: Add your project "open5gcore" to OSM ServiceMeshMemberRoll under your istio control plane namespace (ex; istio-system)<br>
 (3) Run 0-deploy5gcore.sh that creates the role bindings , deploy helm-charts for you and also also creates virtual istio ingress for webui. <br>
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/Open5GCoreServiceMesh2.png)<br>
 (4) Add your imsi (see ueransim/ueransim-ue-configmap.yaml) to system so your ue registration will be allowed.
