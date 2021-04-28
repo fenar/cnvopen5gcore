@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: open5gs-ausf
+  name: open5gcore-ausf
   labels:
     epc-mode: ausf
 spec:
@@ -15,7 +15,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: open5gs-ausf-deployment
+  name: open5gcore-ausf-deployment
   labels:
     epc-mode: ausf
 spec:
@@ -32,14 +32,14 @@ spec:
     spec:    
       containers:
         - name: ausf
-          image: "{{ .Values.open5gs.image.repository }}:{{ .Values.open5gs.image.tag }}"
-          imagePullPolicy: {{ .Values.open5gs.image.pullPolicy }}
+          image: "{{ .Values.open5gcore.image.repository }}:{{ .Values.open5gcore.image.tag }}"
+          imagePullPolicy: {{ .Values.open5gcore.image.pullPolicy }}
           command: ["open5gs-ausfd", "-c", "/open5gs/config-map/ausf.yaml"]
           volumeMounts:
-          - name: open5gs-ausf-config
+          - name: open5gcore-ausf-config
             mountPath: /open5gs/config-map/ausf.yaml
             subPath: "ausf.yaml"
       volumes:
-        - name: open5gs-ausf-config
+        - name: open5gcore-ausf-config
           configMap:
-            name: open5gs-ausf-config
+            name: open5gcore-ausf-config
