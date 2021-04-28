@@ -6,7 +6,7 @@ Background: <br>
 ----
 
 Pre-Requistes: OCP with OSM and CNV (Optional, if you like to use UERANSIM as container deployment, see Option-B below) installed and configured.<br>
-(1) oc new-project open5gcore<br><br>
+(1) oc new-project open5gcore<br>
 (2) oc create -f sctpmod.yaml<br>
 Note-1: Wait for machine config to be applied on all worker nodes and all worker nodes come back in to ready state.<br>
 Check with; ''oc get nodes'' <br>
