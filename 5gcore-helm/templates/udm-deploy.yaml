@@ -32,8 +32,8 @@ spec:
     spec:   
       containers:
         - name: udm
-          image: "{{ .Values.open5gs.image.repository }}:{{ .Values.open5gs.image.tag }}"
-          imagePullPolicy: {{ .Values.open5gs.image.pullPolicy }}
+          image: "{{ .Values.open5gcore.image.repository }}:{{ .Values.open5gcore.image.tag }}"
+          imagePullPolicy: {{ .Values.open5gcore.image.pullPolicy }}
           command: ["open5gs-udmd", "-c", "/open5gs/config-map/udm.yaml"]
           volumeMounts:
           - name: open5gs-udm-config
