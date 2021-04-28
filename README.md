@@ -50,3 +50,6 @@ Or use prepeuransimvm.sh to perform install inside your vm.<br>
 ----
 
 (6) Clear Enviroment run ./9-delete5gcore.sh to wipe 5gcore deployment<br> 
+
+----
+
