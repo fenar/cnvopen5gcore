@@ -4,7 +4,9 @@ Background: <br>
 (ii) https://www.free5gc.org/ <br>
 
 ----
-Prerequisites: OCP with OSM and CNV (Optional, if you like to use UERANSIM as container deployment, see Option-B below) installed and configured.<br>
+Prerequisites: 
+OCP with OSM and CNV (Optional, if you like to use UERANSIM as container deployment, see Option-B below) installed and configured.<br>
+
 ----
 
 (1) oc new-project open5gcore<br>
