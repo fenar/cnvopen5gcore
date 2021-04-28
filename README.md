@@ -31,22 +31,22 @@ Note-2: Add open5gs to OSM ServiceMeshMemberRoll under istio-system ns (your ist
 Or use prepeuransimvm.sh to perform install inside your vm.<br>
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/UERANSIM2.png)<br>
 
-(A6) Git clone this rep in to kubevirt-vm and go to ueransim folder, run ./nr-gnb -c open5gs-gnb.yaml in UERAMSIM VM Terminal1 
+(A5.7) Git clone this rep in to kubevirt-vm and go to ueransim folder, run ./nr-gnb -c open5gs-gnb.yaml in UERAMSIM VM Terminal1 
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/ueransim-gnb2.png)<br>
 
-(A7) Under ueransim folder, run ./nr-ue -c open5gs-ue.yaml in UERANSIM VM Terminal2
+(A5.8) Under ueransim folder, run ./nr-ue -c open5gs-ue.yaml in UERANSIM VM Terminal2
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/ueransim-ue2.png)<br>
 
 # [OPTION-B Running EURANSIM as a pod with multiple containers inside] 
-(B5) Use 1-deployUERANSIM.sh that creates the config maps and ueransim deployment with one pod that has multiple containers (gnb, ue as separate containers inside same pod) <br>
+(B5.1) Use 1-deployUERANSIM.sh that creates the config maps and ueransim deployment with one pod that has multiple containers (gnb, ue as separate containers inside same pod) <br>
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/ueransim-pod.png)<br>
 
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/ueransim-gnb-cont.png)<br>
 
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/ueransim-ue-cont.png)<br>
 
-(B6) Use 8-deleteUERANSIM.sh to wipe ueransim microservices deployment
+(B5.2) Use 8-deleteUERANSIM.sh to wipe ueransim microservices deployment
 
 ----
 
-Clear Enviroment run ./9-delete5gcore.sh to wipe 5gcore deployment<br> 
+(6) Clear Enviroment run ./9-delete5gcore.sh to wipe 5gcore deployment<br> 
