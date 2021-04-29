@@ -58,3 +58,4 @@ Or use prepeuransimvm.sh to perform install inside your vm.<br>
 
 Credits:<br>
 (*) Christopher Adigun's Open5gs work with Linkerd.[Ref-Link](https://levelup.gitconnected.com/opensource-5g-core-with-service-mesh-bba4ded044fa)
+<a href="https://levelup.gitconnected.com/opensource-5g-core-with-service-mesh-bba4ded044fa" target="_blank">Christopher Adigun's Open5gs work with Linkerd</a>
