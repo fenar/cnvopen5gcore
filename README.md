@@ -2,7 +2,6 @@
 Background: <br>
 (*) https://open5gs.org/ <br>
 (**) https://github.com/open5gs/open5gs <br>
-
 ----
 Prerequisites: 
 OCP with OSM and CNV (Optional, if you like to use UERANSIM as container deployment, see "Option-B Fast Path" below) installed and configured.<br>
@@ -55,3 +54,5 @@ Or use prepeuransimvm.sh to perform install inside your vm.<br>
 
 ----
 
+Credits:<br>
+(*) Christopher Adigun's Open5gs work with Linkerd.<br>
