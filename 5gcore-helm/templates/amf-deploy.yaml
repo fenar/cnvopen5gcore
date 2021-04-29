@@ -33,7 +33,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: open5gs-amf
+  name: open5gs-amf-d
   labels:
     epc-mode: amf
 spec:
