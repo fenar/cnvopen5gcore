@@ -24,7 +24,7 @@ Note-2: Add your project "open5gcore" to OSM ServiceMeshMemberRoll under your is
 # [OPTION-A Long Path : Running EURANSIM in a Kubevirt VM]
 (A5) Deploy UE RAN Simulator: 1st create a Ubuntu vm on cnv <br><br>
 (A5.1) Get iso from https://ubuntu.com/download/desktop <br><br>
-(A5.2) virtctl image-upload --uploadproxy-url=https://cdi-uploadproxy-openshift-cnv.apps.<clustername>.<yourdeploymentdomain>/ dv iso-ubuntu2004-dv --size=3Gi --image-path=iso/ubuntu-20.04.2.0-desktop-amd64.iso --insecure <br><br>
+(A5.2) virtctl image-upload --uploadproxy-url=<cdi-url> dv iso-ubuntu2004-dv --size=3Gi --image-path=iso/ubuntu-20.04.2.0-desktop-amd64.iso --insecure <br><br>
 (A5.3) Create vm install target disk:  oc create -f ubuntuvm-pvc.yaml <br><br>
 (A5.4) Launch vm: oc create -f ubuntuvm.yaml <br>
 (A5.5) Go to VM Console under OCP Web UI Workloads>Virtualization>Virtualization>Virtual Machines>ubuntu2004vm1 Console and finish installation.<br>
