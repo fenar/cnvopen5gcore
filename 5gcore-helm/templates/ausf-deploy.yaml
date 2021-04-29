@@ -15,7 +15,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: open5gs-ausf
+  name: open5gs-ausf-d
   labels:
     epc-mode: ausf
 spec:
