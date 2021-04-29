@@ -1,7 +1,7 @@
 ## Open5GCore deployment on Red Hat Openshift Virtualization (CNF, VNF) with Service Mesh<br>
 Background: <br>
 (i) https://open5gs.org/open5gs/docs/guide/01-quickstart/ <br>
-(ii) https://www.free5gc.org/ <br>
+(ii) https://open5gs.org/ <br>
 
 ----
 Prerequisites: 
