@@ -7,7 +7,9 @@ Background: <br>
 ----
 Prerequisites: 
 OCP with OSM and CNV (optional, if you like to use UERANSIM as container deployment, see "Option-B Fast Path" below) installed and configured.<br>
-Ref: https://docs.openshift.com/container-platform/4.7/service_mesh/v1x/installing-ossm.html
+
+Ref: https://docs.openshift.com/container-platform/4.7/service_mesh/v1x/installing-ossm.html<br>
+
 ----
 
 (1) oc new-project open5gcore<br>
