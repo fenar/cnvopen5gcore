@@ -22,7 +22,7 @@ spec:
               tickPolicy: catchup
           utc: {}
         cpu:
-          cores: 1
+          cores: 4
           sockets: 2
           threads: 1
         devices:
@@ -30,11 +30,11 @@ spec:
           - cdrom:
               bus: sata
             name: ubuntu-guest-tools
-          - bootOrder: 2
+          - bootOrder: 1
             cdrom:
               bus: sata
             name: cdrom
-          - bootOrder: 1
+          - bootOrder: 2
             disk:
               bus: virtio
             name: disk-1
@@ -58,7 +58,7 @@ spec:
           type: pc-q35-rhel8.2.0
         resources:
           requests:
-            memory: 8Gi
+            memory: 16Gi
       hostname: ubuntuvm1
       networks:
       - name: nic-0
