@@ -37,6 +37,8 @@ Or use prepeuransimvm.sh to perform install inside your vm.<br>
 (A5.8) Under ueransim folder, run ./nr-ue -c open5gs-ue.yaml in UERANSIM VM Terminal2
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/ueransim-ue2.png)<br>
 
+----
+
 # [OPTION-B Fast Path: Running EURANSIM as a pod with multiple containers inside] 
 (B5.1) Use 1-deployUERANSIM.sh that creates the config maps and ueransim deployment with one pod that has multiple containers (gnb, ue as separate containers inside same pod) <br>
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/ueransim-pod.png)<br>
