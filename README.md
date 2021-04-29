@@ -55,6 +55,3 @@ Or use prepeuransimvm.sh to perform install inside your vm.<br>
 (6) Clear Enviroment run ./9-delete5gcore.sh to wipe 5gcore deployment<br> 
 
 ----
-
-Credits:<br>
-(*) <a href="https://levelup.gitconnected.com/opensource-5g-core-with-service-mesh-bba4ded044fa" target="_blank">Christopher Adigun's Open5gs work with Linkerd</a>
