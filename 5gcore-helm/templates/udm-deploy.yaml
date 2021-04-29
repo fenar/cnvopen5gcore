@@ -15,7 +15,7 @@ spec:
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
-  name: open5gs-udm-deployment
+  name: open5gs-udm
   labels:
     epc-mode: udm
 spec:
