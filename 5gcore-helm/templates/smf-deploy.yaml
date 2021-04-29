@@ -15,7 +15,7 @@ spec:
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
-  name: open5gs-smf-deployment
+  name: open5gs-smf
   labels:
     epc-mode: smf
 spec:
