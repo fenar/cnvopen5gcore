@@ -1,7 +1,9 @@
 ## Open5GCore deployment on Red Hat Openshift Virtualization (CNF, VNF) with Service Mesh<br>
+
 Background: <br>
 (*) https://open5gs.org/ <br>
 (**) https://github.com/open5gs/open5gs <br>
+
 ----
 Prerequisites: 
 OCP with OSM and CNV (Optional, if you like to use UERANSIM as container deployment, see "Option-B Fast Path" below) installed and configured.<br>
