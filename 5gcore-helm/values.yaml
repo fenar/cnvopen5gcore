@@ -11,8 +11,6 @@ webui:
     repository: docker.io/efatnar/open5gcore-webui
     pullPolicy: IfNotPresent
     tag: "v1.1"
-  ingress:
-    enabled: false
 
 dnn: internet  
 
