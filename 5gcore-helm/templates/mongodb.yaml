@@ -37,20 +37,6 @@ spec:
         persistentVolumeClaim:
           claimName: mongodb-pv-claim
 ---
-kind: PersistentVolume
-apiVersion: v1
-metadata:
-  name: mongodb-pv-volume
-  labels:
-    type: local
-spec:
-  capacity:
-    storage: 20Gi
-  accessModes:
-    - ReadWriteOnce
-  hostPath:
-    path: "/mnt/"
----
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
