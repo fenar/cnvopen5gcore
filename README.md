@@ -23,6 +23,9 @@ Note-2: Add your project "open5gcore" to OSM ServiceMeshMemberRoll under your is
 
 (3) Run 0-deploy5gcore.sh that creates the role bindings , deploy helm-charts for you and also also creates virtual istio ingress for webui. <br>
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/Open5GCoreServiceMesh2.png)<br>
+
+----
+
 (4) Provision user equipment (UE) imsi (see ueransim/ueransim-ue-configmap.yaml, defaul imsi is 208930000000001) to 5gcore so your ue registration (ie running ueransim ue mode) will be allowed.
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/Open5GSWebUI.png)<br>
 
