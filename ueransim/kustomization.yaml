@@ -1,0 +1,3 @@
+resources:
+- ueransim-gnb-configmap.yaml
+- ueransim-ue-configmap.yaml
