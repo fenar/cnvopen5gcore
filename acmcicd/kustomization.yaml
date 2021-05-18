@@ -1,0 +1,21 @@
+resources:
+- amf-configmap.yaml
+- amf-deploy.yaml
+- ausf-configmap.yaml
+- ausf-deploy.yaml
+- mongodb.yaml
+- nrf-configmap.yaml
+- nrf-deploy.yaml
+- nssf-configmap.yaml
+- nssf-deploy.yaml
+- pcf-configmap.yaml
+- pcf-deploy.yaml
+- smf-configmap.yaml
+- smf-deploy.yaml
+- udm-configmap.yaml
+- udm-deploy.yaml
+- udr-configmap.yaml
+- udr-deploy.yaml
+- upf-configmap.yaml
+- upf-deploy.yaml
+- web-ui-deploy.yaml

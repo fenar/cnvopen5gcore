@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: open5gs-ausf-config
+  labels:
+    epc-mode: ausf
+data:
+  ausf.yaml: |
+    ausf:
+      sbi:
+      - addr: 0.0.0.0
+        advertise: open5gs-ausf
+    nrf:
+     sbi:
+      name: open5gs-nrf
