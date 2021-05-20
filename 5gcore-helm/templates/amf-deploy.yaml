@@ -26,9 +26,9 @@ spec:
     epc-mode: amf
   ports:
     - protocol: TCP
-      port: 38080
-      targetPort: 38080
-      nodePort: 30480    
+      port: 80
+      targetPort: 80
+      nodePort: 30080    
 ---
 kind: NetworkPolicy
 apiVersion: networking.k8s.io/v1
