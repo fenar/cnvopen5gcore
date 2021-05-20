@@ -26,7 +26,7 @@ spec:
   template:
     metadata:
       annotations:
-        # sidecar.istio.io/inject: "true" <- disabled due to upf uses /dev/net device hostpath map for now.
+        sidecar.istio.io/inject: "true"
       labels:
         epc-mode: upf
     spec:   
