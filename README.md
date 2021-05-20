@@ -1,8 +1,9 @@
 # 5G Core with RAN + UE simulator deployment on Red Hat Openshift with Service Mesh<br>
 
 Background: <br>
-(*) https://open5gs.org/ <br>
-(**) https://github.com/open5gs/open5gs <br>
+(a) https://open5gs.org/ <br>
+(b) https://github.com/open5gs/open5gs <br>
+(c) https://github.com/aligungr/UERANSIM <br>
 
 ----
 Prerequisites: 
