@@ -1,4 +1,4 @@
-## Open5GCore deployment on Red Hat Openshift with Service Mesh<br>
+# 5G Core with RAN + UE simulator deployment on Red Hat Openshift with Service Mesh<br>
 
 Background: <br>
 (*) https://open5gs.org/ <br>
@@ -20,7 +20,7 @@ Note-1: Wait for machine config to be applied on all worker nodes and all worker
 Note-2: Add your project "open5gcore" to OSM ServiceMeshMemberRoll under your istio control plane namespace (ex; istio-system)<br>
 
 ----
-# [Deploying Open5GCore] 
+## [Deploying Open5GCore] 
 (3) Run 0-deploy5gcore.sh that creates the role bindings , deploy helm-charts for you and also also creates virtual istio ingress for webui. <br>
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/Open5GCoreServiceMesh2.png)<br>
 
@@ -31,7 +31,7 @@ Note-2: Add your project "open5gcore" to OSM ServiceMeshMemberRoll under your is
 
 ----
 
-# [Running EURANSIM as a pod with multiple containers inside] 
+## [Running EURANSIM as a pod with multiple containers inside] 
 (5.1) Use 1-deployUERANSIM.sh that creates the config maps and ueransim deployment with one pod that has multiple containers (gnb, ue as separate containers inside same pod) <br>
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/ueransim-pod.png)<br>
 
