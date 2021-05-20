@@ -20,7 +20,7 @@ Note-1: Wait for machine config to be applied on all worker nodes and all worker
 Note-2: Add your project "open5gcore" to OSM ServiceMeshMemberRoll under your istio control plane namespace (ex; istio-system)<br>
 
 ----
-
+# [Deploying Open5GCore] 
 (3) Run 0-deploy5gcore.sh that creates the role bindings , deploy helm-charts for you and also also creates virtual istio ingress for webui. <br>
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/Open5GCoreServiceMesh2.png)<br>
 
