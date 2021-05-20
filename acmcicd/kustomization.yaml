@@ -1,3 +1,4 @@
+namespace: open5gcore
 resources:
 - amf-configmap.yaml
 - amf-deploy.yaml
