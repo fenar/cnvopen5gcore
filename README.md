@@ -28,7 +28,7 @@ Note-2: Add your project "open5gcore" to OSM ServiceMeshMemberRoll under your is
 
 ----
 ## [Running EURANSIM as a pod with multiple containers inside] 
-(5.1) Use 1-deployUERANSIM.sh that creates the config maps and ueransim deployment with one pod that has multiple containers (gnb, ue as separate containers inside same pod) <br>
+(5) Use 1-deployUERANSIM.sh that creates the config maps and ueransim deployment with one pod that has multiple containers (gnb, ue as separate containers inside same pod) <br>
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/ueransim-pod.png)<br>
 
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/ueransim-gnb-cont.png)<br>
@@ -36,10 +36,16 @@ Note-2: Add your project "open5gcore" to OSM ServiceMeshMemberRoll under your is
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/ueransim-ue-cont.png)<br>
 
 ----
-(5.2) Use 8-deleteUERANSIM.sh to wipe ueransim microservices deployment
+## 5GCore with GitOps
+
+(6) If you like to leverage GitOps on your deployment you can use Red Hat Openshift GitOps operator and simply point this repo with acmcicd path and kickstart your deployment.
+![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/argo.png)<br>
+
+----
+(7) Use 8-deleteUERANSIM.sh to wipe ueransim microservices deployment
 
 ----
 
-(6) Clear Enviroment run ./9-delete5gcore.sh to wipe 5gcore deployment<br> 
+(8) Clear Enviroment run ./9-delete5gcore.sh to wipe 5gcore deployment<br> 
 
 ----
