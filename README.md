@@ -49,6 +49,11 @@ oc -n istio-system patch --type='json' smmr default -p '[{"op": "add", "path": "
 
 (5) If you like to leverage GitOps on your deployment you can use Red Hat Openshift GitOps operator and simply point this repo with acmcicd path and kickstart your deployment.
 Ref: [Red Hat GitOps Operator](https://catalog.redhat.com/software/operators/detail/5fb288c70a12d20cbecc6056)<br>
+If you fail using ArgoCD due to permission errors on your project, worth to check/add necessary role to your argocd controller.
+```
+oc adm policy add-cluster-role-to-user cluster-admin -z openshift-gitops-argocd-application-controller -n openshift-gitops
+```
+
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/argo.png)<br>
 
 ----
