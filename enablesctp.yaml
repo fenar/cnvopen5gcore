@@ -2,6 +2,7 @@ apiVersion: machineconfiguration.openshift.io/v1
 kind: MachineConfig
 metadata:
   labels:
+    # for 3 node cluster change role to ; master
     machineconfiguration.openshift.io/role: worker
   name: sctpmodule
 spec:
