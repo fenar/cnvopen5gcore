@@ -3,7 +3,7 @@
 echo -e "Creating Project: open5gcore\n"
 oc new-project open5gcore
 echo -e "Adding project to service mesh member-roll\n"
-
+oc -n istio-system patch --type='json' smmr default -p '[{"op": "add", "path": "/spec/members", "value":["'"open5gcore"'"]}]'
 echo -e "Configuring privileged access - Sorry it is what is....\n"
 echo
 oc adm policy add-scc-to-user anyuid -z default 
