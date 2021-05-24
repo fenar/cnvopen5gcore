@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 #Author: fenar
+echo -e "Creating Project: open5gcore\n"
+oc new-project open5gcore
+echo -e "Adding project to service mesh member-roll\n"
+
 echo -e "Configuring privileged access - Sorry it is what is....\n"
 echo
 oc adm policy add-scc-to-user anyuid -z default 
