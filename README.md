@@ -7,8 +7,7 @@ Background: <br>
 
 ----
 Prerequisites: <br>
-(i) OCP with OSM installed and configured.<br>
-    Ref: https://docs.openshift.com/container-platform/4.7/service_mesh/v1x/installing-ossm.html<br>
+(i) [OCP with OSM installed and configured] (https://docs.openshift.com/container-platform/4.7/service_mesh/v1x/installing-ossm.html)<br>
 (ii) Enable SCTP on worker nodes <br>
 [Enabling SCTP on OCP Reference](https://docs.openshift.com/container-platform/4.7/networking/using-sctp.html#nw-sctp-enabling_using-sctp)
 ```
