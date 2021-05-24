@@ -20,7 +20,7 @@ oc get nodes
 
 ----
 ## [Deploying Open5GCore] 
-(1) Run 0-deploy5gcore.sh that creates the role bindings , deploy helm-charts for you and also also creates virtual istio ingress for webui. <br>
+(1) Run 0-deploy5gcore.sh that creates the project, add project to service mesh member-roll, provisions necessary role bindings , deploy helm-charts for you and also also creates virtual istio ingress for webui. <br>
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/Open5GCoreServiceMesh2.png)<br>
 
 ----
