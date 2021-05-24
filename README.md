@@ -10,7 +10,7 @@ Prerequisites: <br>
 (i) [OCP with OSM installed and configured](https://docs.openshift.com/container-platform/4.7/service_mesh/v1x/installing-ossm.html)<br>
 (ii) [Enable SCTP on OCP Reference](https://docs.openshift.com/container-platform/4.7/networking/using-sctp.html#nw-sctp-enabling_using-sctp)
 ```
-oc create -f sctpmod.yaml
+oc create -f enablesctp.yaml
 
 ```
 Wait for machine config to be applied on all worker nodes and all worker nodes come back in to ready state. Check with; 
