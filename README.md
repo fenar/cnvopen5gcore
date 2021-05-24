@@ -6,7 +6,7 @@ Background: <br>
 (c) https://github.com/aligungr/UERANSIM <br>
 
 ----
-Prerequisites: 
+Prerequisites: <br>
 (i) OCP with OSM installed and configured.<br>
     Ref: https://docs.openshift.com/container-platform/4.7/service_mesh/v1x/installing-ossm.html<br>
 (ii) Enable SCTP on worker nodes <br>
