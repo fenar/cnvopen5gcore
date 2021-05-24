@@ -13,7 +13,10 @@ Prerequisites: <br>
 oc create -f sctpmod.yaml
 
 ```
-Wait for machine config to be applied on all worker nodes and all worker nodes come back in to ready state. Check with; ''oc get nodes'' <br>
+Wait for machine config to be applied on all worker nodes and all worker nodes come back in to ready state. Check with; 
+```
+oc get nodes
+```
 
 ----
 (1) oc new-project open5gcore<br>
