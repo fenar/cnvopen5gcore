@@ -48,6 +48,7 @@ oc -n istio-system patch --type='json' smmr default -p '[{"op": "add", "path": "
 ## 5GCore with GitOps
 
 (5) If you like to leverage GitOps on your deployment you can use Red Hat Openshift GitOps operator and simply point this repo with acmcicd path and kickstart your deployment.
+Ref: [Red Hat GitOps Operator](https://catalog.redhat.com/software/operators/detail/5fb288c70a12d20cbecc6056)<br>
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/argo.png)<br>
 
 ----
