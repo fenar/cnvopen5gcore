@@ -18,7 +18,7 @@ spec:
         epc-mode: 5gran
     spec:    
       containers:
-      - name: 5G-NB
+      - name: gnb
         imagePullPolicy: IfNotPresent
         image: "{{ .Values.ran.image.repository }}:{{ .Values.ran.image.tag }}" 
         securityContext:
@@ -29,7 +29,7 @@ spec:
           - name: ueransim-gnb-config
             mountPath: /open5gs/config-map/5gran-gnb-configmap.yaml
             subPath: "ueransim-gnb-configmap.yaml"
-      - name: 5G-UE
+      - name: ue
         imagePullPolicy: IfNotPresent
         image: "{{ .Values.ran.image.repository }}:{{ .Values.ran.image.tag }}"
         securityContext:
@@ -39,7 +39,7 @@ spec:
           - name: ueransim-ue-config
             mountPath: /open5gs/config-map/5gran-ue-configmap.yaml
             subPath: "ueransim-ue-configmap.yaml"
-      - name: 5G-UE-Binder
+      - name: uebinder
         imagePullPolicy: IfNotPresent
         image: "{{ .Values.ran.image.repository }}:{{ .Values.ran.image.tag }}"
         securityContext:
