@@ -29,7 +29,7 @@ oc get nodes
 
 ----
 ## [Running EURANSIM as a pod with multiple containers inside] 
-(3) Use 1-deployUERANSIM.sh that creates the config maps and ueransim deployment with one pod that has multiple containers (gnb, ue as separate containers inside same pod) <br>
+(3) Use 1-deploy5gran.sh that creates the config maps and ueransim deployment with one pod that has multiple containers (gnb, ue as separate containers inside same pod) <br>
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/ueransim-pod.png)<br>
 
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/ueransim-gnb-cont.png)<br>
@@ -60,10 +60,10 @@ PS: If you wonder from where to get the default ArgoCD admin password, here it i
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/argopasswd.png)<br>
 
 ----
-(5) Use 8-deleteUERANSIM.sh to wipe ueransim microservices deployment
+(5) Use ./3-delete5gran.sh to wipe ueransim microservices deployment
 
 ----
 
-(6) Clear Enviroment run ./9-delete5gcore.sh to wipe 5gcore deployment<br> 
+(6) Clear Enviroment run ./5-delete5gcore.sh to wipe 5gcore deployment<br> 
 
 ----
