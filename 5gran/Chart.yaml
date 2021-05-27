@@ -1,6 +1,6 @@
 apiVersion: v2
-name: ueransim-helm
-description: A Helm Chart for UERANSIM
+name: 5gran
+description: A Helm Chart for 5GRAN
 
 type: application
 
