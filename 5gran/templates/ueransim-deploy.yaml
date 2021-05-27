@@ -18,9 +18,9 @@ spec:
         epc-mode: ueransim
     spec:    
       containers:
-      - name: ueransim-gnb
-        imagePullPolicy: {{ .Values.ueransim.image.pullPolicy }}
-        image: "{{ .Values.ueransim.image.repository }}:{{ .Values.ueransim.image.tag }}" 
+      - name: 5G-NB
+        imagePullPolicy: {{ .Values.5gran.image.pullPolicy }}
+        image: "{{ .Values.5gran.image.repository }}:{{ .Values.5gran.image.tag }}" 
         securityContext:
           privileged: true
         command: ["/bin/sh","-c"]
@@ -29,9 +29,9 @@ spec:
           - name: ueransim-gnb-config
             mountPath: /open5gs/config-map/ueransim-gnb-configmap.yaml
             subPath: "ueransim-gnb-configmap.yaml"
-      - name: ueransim-ue
-        imagePullPolicy: {{ .Values.ueransim.image.pullPolicy }}
-        image: "{{ .Values.ueransim.image.repository }}:{{ .Values.ueransim.image.tag }}"
+      - name: 5G-UE
+        imagePullPolicy: {{ .Values.5gran.image.pullPolicy }}
+        image: "{{ .Values.5gran.image.repository }}:{{ .Values.5gran.image.tag }}"
         securityContext:
           privileged: true
         command: ["/bin/sh","-c","./nr-ue -c open5gs-ue.yaml"]
@@ -39,9 +39,9 @@ spec:
           - name: ueransim-ue-config
             mountPath: /open5gs/config-map/ueransim-ue-configmap.yaml
             subPath: "ueransim-ue-configmap.yaml"
-      - name: ueransim-binder
-        imagePullPolicy: {{ .Values.ueransim.image.pullPolicy }}
-        image: "{{ .Values.ueransim.image.repository }}:{{ .Values.ueransim.image.tag }}"
+      - name: 5G-UE-Binder
+        imagePullPolicy: {{ .Values.5gran.image.pullPolicy }}
+        image: "{{ .Values.5gran.image.repository }}:{{ .Values.5gran.image.tag }}"
         securityContext:
           privileged: true
         command: ["/bin/sh","-c","sh nr-binder 10.45.0.2 ping www.google.com"]
