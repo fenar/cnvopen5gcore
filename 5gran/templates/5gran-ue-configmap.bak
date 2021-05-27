@@ -20,7 +20,7 @@ data:
     # Authentication Management Field (AMF) value
     amf: '8000'
     # IMEI number of the device. It is used if no SUPI is provided
-    imei: '356938035643803'
+    imei: '356938035643801'
     # IMEISV number of the device. It is used if no SUPI and IMEI is provided
     imeiSv: '4370816125816151'
 
