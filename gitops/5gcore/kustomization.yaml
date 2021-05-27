@@ -1,9 +1,9 @@
 resources:
 - namespace.yaml
-- amf-configmap.yaml
-- amf-deploy.yaml
 - ausf-configmap.yaml
 - ausf-deploy.yaml
+- amf-configmap.yaml
+- amf-deploy.yaml
 - mongodb.yaml
 - nrf-configmap.yaml
 - nrf-deploy.yaml
