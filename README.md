@@ -39,7 +39,7 @@ oc get nodes
 ----
 ## 5GCore with GitOps
 
-(4) If you like to leverage GitOps on your deployment you can use Red Hat Openshift GitOps operator and simply point this repo with acmcicd path and kickstart your deployment.
+(4) If you like to leverage GitOps on your deployment you can use Red Hat Openshift GitOps operator and simply point this repo with gitops path and kickstart your deployment.
 Ref: [Red Hat GitOps Operator](https://catalog.redhat.com/software/operators/detail/5fb288c70a12d20cbecc6056)<br>
 If you fail using ArgoCD due to permission errors on your project, worth to check/add necessary role to your argocd controller.
 ```
