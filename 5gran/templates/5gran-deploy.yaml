@@ -23,8 +23,7 @@ spec:
         image: "{{ .Values.ran.image.repository }}:{{ .Values.ran.image.tag }}" 
         securityContext:
           privileged: true
-        command: ["/bin/sh","-c"]
-        args: ["./nr-gnb -c /open5gs/config-map/5gran-gnb-configmap.yaml"]
+        command: ["/bin/sh","-c","./nr-gnb -c /open5gs/config-map/5gran-gnb-configmap.yaml"]
         volumeMounts:
           - name: 5gran-gnb-config
             mountPath: /open5gs/config-map/5gran-gnb-configmap.yaml
