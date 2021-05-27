@@ -1,6 +1,6 @@
 # Default values for ueransim-helm.
 5gran:
-  amfip: "172.27.103.86"
+  amfip: 172.27.103.86
   image:
     repository: docker.io/efatnar/ueransim
     pullPolicy: IfNotPresent
