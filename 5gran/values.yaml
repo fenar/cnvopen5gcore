@@ -1,9 +1,8 @@
 # Default values for ueransim-helm.
 5gran:
-  amfip: "172.27.103.86" # <- put your amf nodeport-ip
-  amfport: "30412" # <- put your amf nodeport-port
+  amf-ip: "172.27.103.86" # <- put your amf nodeport-ip
+  amf-port: "30412" # <- put your amf nodeport-port
   image:
     repository: docker.io/efatnar/ueransim
     pullPolicy: IfNotPresent
     tag: "v1.5"
-
