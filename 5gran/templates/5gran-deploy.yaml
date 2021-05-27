@@ -20,7 +20,7 @@ spec:
       containers:
       - name: 5G-NB
         imagePullPolicy: IfNotPresent
-        image: "{{ .Values.5gran.image.repository }}:{{ .Values.5gran.image.tag }}" 
+        image: "{{ .Values.ran.image.repository }}:{{ .Values.ran.image.tag }}" 
         securityContext:
           privileged: true
         command: ["/bin/sh","-c"]
@@ -31,7 +31,7 @@ spec:
             subPath: "ueransim-gnb-configmap.yaml"
       - name: 5G-UE
         imagePullPolicy: IfNotPresent
-        image: "{{ .Values.5gran.image.repository }}:{{ .Values.5gran.image.tag }}"
+        image: "{{ .Values.ran.image.repository }}:{{ .Values.ran.image.tag }}"
         securityContext:
           privileged: true
         command: ["/bin/sh","-c","./nr-ue -c open5gs-ue.yaml"]
@@ -41,7 +41,7 @@ spec:
             subPath: "ueransim-ue-configmap.yaml"
       - name: 5G-UE-Binder
         imagePullPolicy: IfNotPresent
-        image: "{{ .Values.5gran.image.repository }}:{{ .Values.5gran.image.tag }}"
+        image: "{{ .Values.ran.image.repository }}:{{ .Values.ran.image.tag }}"
         securityContext:
           privileged: true
         command: ["/bin/sh","-c","sh nr-binder 10.45.0.2 ping www.google.com"]
