@@ -2,10 +2,9 @@
 #Author: fenar
 echo -e "Wiping UERANSIM....\n"
 echo
-cd ueransim
+cd ueransim-helm
+rm amf-ip
 echo "Removing UERANSIM Deployment"
-oc delete -f ueransim-gnb-configmap.yaml
-oc delete -f ueransim-ue-configmap.yaml
-oc delete -f ueransim-deploy.yaml
-rm ueransim-gnb-configmap.yaml
+rm templates/ueransim-gnb-configmap.yaml
+helm uninstall ueransim
 echo "Bye"

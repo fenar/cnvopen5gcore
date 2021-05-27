@@ -1,0 +1,7 @@
+# Default values for ueransim-helm.
+
+ueransim:
+  image:
+    repository: docker.io/efatnar/ueransim
+    pullPolicy: IfNotPresent
+    tag: "v1.5"

@@ -19,8 +19,8 @@ spec:
     spec:    
       containers:
       - name: ueransim-gnb
-        imagePullPolicy: IfNotPresent
-        image: "docker.io/efatnar/ueransim:v1.5" 
+        imagePullPolicy: {{ .Values.ueransim.image.pullPolicy }}
+        image: "{{ .Values.ueransim.image.repository }}:{{ .Values.ueransim.image.tag }}" 
         securityContext:
           privileged: true
         command: ["/bin/sh","-c"]

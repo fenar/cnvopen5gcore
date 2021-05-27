@@ -1,0 +1,9 @@
+apiVersion: v2
+name: ueransim-helm
+description: A Helm Chart for UERANSIM
+
+type: application
+
+version: 0.0.1
+
+appVersion: 1.1
