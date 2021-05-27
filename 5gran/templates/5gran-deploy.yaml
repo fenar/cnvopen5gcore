@@ -19,7 +19,7 @@ spec:
     spec:    
       containers:
       - name: gnb
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: {{ .Values.ran.image.pullPolicy }}
         image: "{{ .Values.ran.image.repository }}:{{ .Values.ran.image.tag }}" 
         securityContext:
           privileged: true
@@ -30,7 +30,7 @@ spec:
             mountPath: /open5gs/config-map/5gran-gnb-configmap.yaml
             subPath: "5gran-gnb-configmap.yaml"
       - name: ue
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: {{ .Values.ran.image.pullPolicy }}
         image: "{{ .Values.ran.image.repository }}:{{ .Values.ran.image.tag }}"
         securityContext:
           privileged: true
@@ -40,7 +40,7 @@ spec:
             mountPath: /open5gs/config-map/5gran-ue-configmap.yaml
             subPath: "5gran-ue-configmap.yaml"
       - name: uebinder
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: {{ .Values.ran.image.pullPolicy }}
         image: "{{ .Values.ran.image.repository }}:{{ .Values.ran.image.tag }}"
         securityContext:
           privileged: true
