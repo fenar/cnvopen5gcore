@@ -23,7 +23,7 @@ data:
     # IMEI number of the device. It is used if no SUPI is provided
     imei: '35693803564381'
     # IMEISV number of the device. It is used if no SUPI and IMEI is provided
-    imeiSv: '35693803564381'
+    imeiSv: '4370816125816151'
 
     # List of gNB IP addresses for Radio Link Simulation
     gnbSearchList:
