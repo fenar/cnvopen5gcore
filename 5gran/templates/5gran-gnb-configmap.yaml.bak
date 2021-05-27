@@ -1,7 +1,7 @@
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: ueransim-gnb-config
+  name: 5gran-gnb-config
 data:
   ueransim-gnb-configmap.yaml: |
     mcc: '208'          # Mobile Country Code value
