@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   name: 5gran-gnb-config
 data:
-  ueransim-gnb-configmap.yaml: |
+  5gran-gnb-configmap.yaml: |
     mcc: '208'          # Mobile Country Code value
     mnc: '93'           # Mobile Network Code value (2 or 3 digits)
 
