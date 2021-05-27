@@ -4,4 +4,4 @@ ueransim:
     repository: docker.io/efatnar/ueransim
     pullPolicy: IfNotPresent
     tag: "v1.5"
-    amf-ip: "172.27.103.86" # <-putyour-amf-nodeport-worker-ip-here
+    amf-ip: "172.27.103.86"
