@@ -6,7 +6,7 @@ data:
   5gran-ue-configmap.yaml: |
     # IMSI number of the UE. IMSI = [MCC|MNC|MSISDN] (In total 15 or 16 digits)
     #supi: 'imsi-208930000000001'
-    supi: '{{ .Values.ran.imsi }}'
+    supi: {{ .Values.ran.imsi }}
     # Mobile Country Code value of HPLMN
     mcc: '208'
     # Mobile Network Code value of HPLMN (2 or 3 digits)
@@ -20,7 +20,7 @@ data:
     # Authentication Management Field (AMF) value
     amf: '8000'
     # IMEI number of the device. It is used if no SUPI is provided
-    imei: '356938035643803'
+    imei: '35693803564381'
     # IMEISV number of the device. It is used if no SUPI and IMEI is provided
     imeiSv: '4370816125816151'
     # List of gNB IP addresses for Radio Link Simulation
