@@ -1,9 +1,9 @@
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: ueransim-ue-config
+  name: 5gran-ue-config
 data:
-  ueransim-ue-configmap.yaml: |
+  5gran-ue-configmap.yaml: |
     # IMSI number of the UE. IMSI = [MCC|MNC|MSISDN] (In total 15 or 16 digits)
     supi: 'imsi-208930000000001'
     # Mobile Country Code value of HPLMN
