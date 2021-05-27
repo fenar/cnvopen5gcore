@@ -48,6 +48,9 @@ oc adm policy add-cluster-role-to-user cluster-admin -z openshift-gitops-argocd-
 
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/argo.png)<br>
 
+PS: If you wonder from where to get the default ArgoCD admin password, here it is :-). <br>
+![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/argopasswd.png)<br>
+
 ----
 (5) Use 8-deleteUERANSIM.sh to wipe ueransim microservices deployment
 
