@@ -17,7 +17,7 @@ data:
 
     # List of AMF address information
     amfConfigs:
-      - address: {{ .Values.ueransim.image.amf-ip }}
+      - address: {{ .Values.5gran.amfip }}
         port: 30412
 
     # List of supported S-NSSAIs by this gNB
