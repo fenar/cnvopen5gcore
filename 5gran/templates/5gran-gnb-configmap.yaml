@@ -17,8 +17,8 @@ data:
 
     # List of AMF address information
     amfConfigs:
-      - address: {{ .Values.ran.amf-ip }}
-        port: {{ .Values.ran.amf-port }}
+      - address: 172.27.103.86
+        port: 30412
 
     # List of supported S-NSSAIs by this gNB
     slices:
