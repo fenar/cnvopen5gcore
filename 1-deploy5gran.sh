@@ -5,8 +5,8 @@ cd 5gran
 echo "Preparing gNB config"
 oc get services | grep amf-open5gs-sctp | awk '{print $3}' > amf-ip
 echo "AMF IP:" && cat amf-ip
-cp templates/ueransim-gnb-configmap.yaml.bak templates/ueransim-gnb-configmap.yaml
-sed -e "s/<put-your-amf-service-ip-here>/$(<amf-ip sed -e 's/[\&/]/\\&/g' -e 's/$/\\n/' | tr -d '\n')/g" -i templates/ueransim-gnb-configmap.yaml
-echo "gNB Config:" && cat templates/ueransim-gnb-configmap.yaml
-helm install -f values.yaml ueransim ./
+cp templates/5gran-gnb-configmap.yaml.bak templates/5gran-gnb-configmap.yaml
+sed -e "s/<put-your-amf-service-ip-here>/$(<amf-ip sed -e 's/[\&/]/\\&/g' -e 's/$/\\n/' | tr -d '\n')/g" -i templates/5gran-gnb-configmap.yaml
+echo "gNB Config:" && cat templates/5gran-gnb-configmap.yaml
+helm install -f values.yaml 5gran ./
 echo "Enjoy The UERANSIM!"
