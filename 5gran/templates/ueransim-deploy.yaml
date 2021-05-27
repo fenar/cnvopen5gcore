@@ -2,20 +2,20 @@
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
-  name: ueransim
+  name: 5gran
   labels:
-    epc-mode: ueransim
+    epc-mode: 5gran
 spec:
   replicas: 1
   selector:
     matchLabels:
-      epc-mode: ueransim
+      epc-mode: 5gran
   template:
     metadata:
       annotations:
         sidecar.istio.io/inject: "false"
       labels:
-        epc-mode: ueransim
+        epc-mode: 5gran
     spec:    
       containers:
       - name: 5G-NB
