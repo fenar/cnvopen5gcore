@@ -29,6 +29,8 @@ spec:
       - name: ue
         imagePullPolicy: {{ .Values.ran.image.pullPolicy }}
         image: "{{ .Values.ran.image.repository }}:{{ .Values.ran.image.tag }}"
+        securityContext:
+          privileged: true
         command: ["/bin/sh","-c","./nr-ue -c open5gs-ue.yaml"]
         volumeMounts:
           - name: 5gran-ue-config
