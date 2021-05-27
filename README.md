@@ -47,8 +47,10 @@ oc adm policy add-cluster-role-to-user cluster-admin -z openshift-gitops-argocd-
 ```
 ArgoCD Applications; 5GCore and 5GRAN <br>
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/argocdapps.png)<br>
+
 ArgoCD 5GCore 
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/argo.png)<br>
+
 ArgoCD 5GRAN 
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/argoran.png)<br>
 
