@@ -1,5 +1,5 @@
 # Default values for 5gran.
-5gran:
+ran:
   image:
     repository: docker.io/efatnar/ueransim
     pullPolicy: IfNotPresent
