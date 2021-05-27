@@ -26,9 +26,9 @@ spec:
         command: ["/bin/sh","-c"]
         args: ["./nr-gnb -c /open5gs/config-map/5gran-gnb-configmap.yaml"]
         volumeMounts:
-          - name: ueransim-gnb-config
+          - name: 5gran-gnb-config
             mountPath: /open5gs/config-map/5gran-gnb-configmap.yaml
-            subPath: "ueransim-gnb-configmap.yaml"
+            subPath: "5gran-gnb-configmap.yaml"
       - name: ue
         imagePullPolicy: IfNotPresent
         image: "{{ .Values.ran.image.repository }}:{{ .Values.ran.image.tag }}"
@@ -36,9 +36,9 @@ spec:
           privileged: true
         command: ["/bin/sh","-c","./nr-ue -c open5gs-ue.yaml"]
         volumeMounts:
-          - name: ueransim-ue-config
+          - name: 5gran-ue-config
             mountPath: /open5gs/config-map/5gran-ue-configmap.yaml
-            subPath: "ueransim-ue-configmap.yaml"
+            subPath: "5gran-ue-configmap.yaml"
       - name: uebinder
         imagePullPolicy: IfNotPresent
         image: "{{ .Values.ran.image.repository }}:{{ .Values.ran.image.tag }}"
