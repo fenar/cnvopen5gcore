@@ -52,7 +52,7 @@ ArgoCD 5GCore
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/argo.png)<br>
 
 ArgoCD 5GRAN 
-![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/argoran.png)<br>
+![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/argoran2.png)<br>
 
 ----
 
