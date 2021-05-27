@@ -46,13 +46,13 @@ If you fail using ArgoCD due to permission errors on your project, worth to chec
 oc adm policy add-cluster-role-to-user cluster-admin -z openshift-gitops-argocd-application-controller -n openshift-gitops
 ```
 ArgoCD Applications; 5GCore and 5GRAN <br>
-![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/argocdapps.png)<br>
+![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/argoran2.png)<br>
 
 ArgoCD 5GCore 
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/argo.png)<br>
 
 ArgoCD 5GRAN 
-![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/argoran2.png)<br>
+![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/argoran.png)<br>
 
 ----
 
