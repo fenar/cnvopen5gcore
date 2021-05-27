@@ -11,9 +11,9 @@ oc adm policy add-scc-to-user hostaccess -z default
 oc adm policy add-scc-to-user hostmount-anyuid -z default 
 oc adm policy add-scc-to-user privileged -z default 
 current_dir=$PWD
-oc create secret generic mongodb-ca --from-file=$current_dir/5gcore-helm/ca-tls-certificates/rds-combined-ca-bundle.pem
+oc create secret generic mongodb-ca --from-file=$current_dir/5gcore/ca-tls-certificates/rds-combined-ca-bundle.pem
 oc get secret
-cd 5gcore-helm
+cd 5gcore
 echo "Deploying Open5G Core"
 helm install -f values.yaml 5gcore ./
 echo "Enjoy The Open 5G Core!"
