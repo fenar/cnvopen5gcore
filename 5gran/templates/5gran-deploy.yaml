@@ -19,7 +19,7 @@ spec:
     spec:    
       containers:
       - name: 5G-NB
-        imagePullPolicy: {{ .Values.5gran.image.pullPolicy }}
+        imagePullPolicy: "{{ .Values.5gran.image.pullPolicy }}"
         image: "{{ .Values.5gran.image.repository }}:{{ .Values.5gran.image.tag }}" 
         securityContext:
           privileged: true
@@ -30,7 +30,7 @@ spec:
             mountPath: /open5gs/config-map/5gran-gnb-configmap.yaml
             subPath: "ueransim-gnb-configmap.yaml"
       - name: 5G-UE
-        imagePullPolicy: {{ .Values.5gran.image.pullPolicy }}
+        imagePullPolicy: "{{ .Values.5gran.image.pullPolicy }}"
         image: "{{ .Values.5gran.image.repository }}:{{ .Values.5gran.image.tag }}"
         securityContext:
           privileged: true
@@ -40,7 +40,7 @@ spec:
             mountPath: /open5gs/config-map/5gran-ue-configmap.yaml
             subPath: "ueransim-ue-configmap.yaml"
       - name: 5G-UE-Binder
-        imagePullPolicy: {{ .Values.5gran.image.pullPolicy }}
+        imagePullPolicy: "{{ .Values.5gran.image.pullPolicy }}"
         image: "{{ .Values.5gran.image.repository }}:{{ .Values.5gran.image.tag }}"
         securityContext:
           privileged: true
