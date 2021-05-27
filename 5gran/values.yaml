@@ -1,8 +1,8 @@
 # Default values for 5gran.
 5gran:
-  amf-ip: "172.27.103.86" # <- put your amf nodeport-ip
-  amf-port: "30412" # <- put your amf nodeport-port
   image:
     repository: docker.io/efatnar/ueransim
     pullPolicy: IfNotPresent
     tag: "v1.5"
+  amf-ip: "172.27.103.86" # <- put your amf nodeport-ip
+  amf-port: "30412" # <- put your amf nodeport-port
