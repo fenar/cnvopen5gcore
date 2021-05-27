@@ -1,6 +1,5 @@
 resources:
 - namespace.yaml
-- resource.yaml
 - amf-configmap.yaml
 - amf-deploy.yaml
 - ausf-configmap.yaml
@@ -21,4 +20,5 @@ resources:
 - upf-configmap.yaml
 - upf-deploy.yaml
 - web-ui-deploy.yaml
+- resource.yaml
 namespace: open5gcore
