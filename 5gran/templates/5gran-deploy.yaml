@@ -21,8 +21,6 @@ spec:
       - name: gnb
         imagePullPolicy: {{ .Values.ran.image.pullPolicy }}
         image: "{{ .Values.ran.image.repository }}:{{ .Values.ran.image.tag }}" 
-        securityContext:
-          privileged: true
         command: ["/bin/sh","-c","./nr-gnb -c /open5gs/config-map/5gran-gnb-configmap.yaml"]
         volumeMounts:
           - name: 5gran-gnb-config
@@ -31,8 +29,6 @@ spec:
       - name: ue
         imagePullPolicy: {{ .Values.ran.image.pullPolicy }}
         image: "{{ .Values.ran.image.repository }}:{{ .Values.ran.image.tag }}"
-        securityContext:
-          privileged: true
         command: ["/bin/sh","-c","./nr-ue -c open5gs-ue.yaml"]
         volumeMounts:
           - name: 5gran-ue-config
@@ -41,8 +37,6 @@ spec:
       - name: uebinder
         imagePullPolicy: {{ .Values.ran.image.pullPolicy }}
         image: "{{ .Values.ran.image.repository }}:{{ .Values.ran.image.tag }}"
-        securityContext:
-          privileged: true
         command: ["/bin/sh","-c","sh nr-binder 10.45.0.2 ping www.google.com"]
       volumes:
         - name: 5gran-gnb-config
