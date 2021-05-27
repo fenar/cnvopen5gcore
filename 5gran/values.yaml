@@ -6,3 +6,4 @@ ran:
     tag: "v1.5"
   amf-ip: "172.27.103.86" # <- put your amf nodeport-ip
   amf-port: "30412" # <- put your amf nodeport-port
+  imsi: "imsi-208930000000001"
