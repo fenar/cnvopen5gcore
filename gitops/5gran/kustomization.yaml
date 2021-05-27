@@ -1,0 +1,6 @@
+resources:
+- namespace.yaml
+- ueransim-gnb-configmap.yaml
+- ueransim-ue-configmap.yaml
+- ueransim-deploy.yaml
+namespace: open5gran

@@ -1,0 +1,54 @@
+
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: ueransim
+  labels:
+    epc-mode: ueransim
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      epc-mode: ueransim
+  template:
+    metadata:
+      annotations:
+        sidecar.istio.io/inject: "false"
+      labels:
+        epc-mode: ueransim
+    spec:    
+      containers:
+      - name: ueransim-gnb
+        imagePullPolicy: IfNotPresent
+        image: "docker.io/efatnar/ueransim:v1.5" 
+        securityContext:
+          privileged: true
+        command: ["/bin/sh","-c"]
+        args: ["./nr-gnb -c /open5gs/config-map/ueransim-gnb-configmap.yaml"]
+        volumeMounts:
+          - name: ueransim-gnb-config
+            mountPath: /open5gs/config-map/ueransim-gnb-configmap.yaml
+            subPath: "ueransim-gnb-configmap.yaml"
+      - name: ueransim-ue
+        imagePullPolicy: IfNotPresent
+        image: "docker.io/efatnar/ueransim:v1.5" 
+        securityContext:
+          privileged: true
+        command: ["/bin/sh","-c","./nr-ue -c open5gs-ue.yaml"]
+        volumeMounts:
+          - name: ueransim-ue-config
+            mountPath: /open5gs/config-map/ueransim-ue-configmap.yaml
+            subPath: "ueransim-ue-configmap.yaml"
+      - name: ueransim-binder
+        imagePullPolicy: IfNotPresent
+        image: "docker.io/efatnar/ueransim:v1.5" 
+        securityContext:
+          privileged: true
+        command: ["/bin/sh","-c","sh nr-binder 10.45.0.2 ping www.google.com"]
+      volumes:
+        - name: ueransim-gnb-config
+          configMap:
+            name: ueransim-gnb-config     
+        - name: ueransim-ue-config
+          configMap:
+            name: ueransim-ue-config 
