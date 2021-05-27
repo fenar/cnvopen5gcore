@@ -24,10 +24,10 @@ spec:
         securityContext:
           privileged: true
         command: ["/bin/sh","-c"]
-        args: ["./nr-gnb -c /open5gs/config-map/ueransim-gnb-configmap.yaml"]
+        args: ["./nr-gnb -c /open5gs/config-map/5gran-gnb-configmap.yaml"]
         volumeMounts:
           - name: ueransim-gnb-config
-            mountPath: /open5gs/config-map/ueransim-gnb-configmap.yaml
+            mountPath: /open5gs/config-map/5gran-gnb-configmap.yaml
             subPath: "ueransim-gnb-configmap.yaml"
       - name: 5G-UE
         imagePullPolicy: {{ .Values.5gran.image.pullPolicy }}
@@ -37,7 +37,7 @@ spec:
         command: ["/bin/sh","-c","./nr-ue -c open5gs-ue.yaml"]
         volumeMounts:
           - name: ueransim-ue-config
-            mountPath: /open5gs/config-map/ueransim-ue-configmap.yaml
+            mountPath: /open5gs/config-map/5gran-ue-configmap.yaml
             subPath: "ueransim-ue-configmap.yaml"
       - name: 5G-UE-Binder
         imagePullPolicy: {{ .Values.5gran.image.pullPolicy }}
@@ -46,9 +46,9 @@ spec:
           privileged: true
         command: ["/bin/sh","-c","sh nr-binder 10.45.0.2 ping www.google.com"]
       volumes:
-        - name: ueransim-gnb-config
+        - name: 5gran-gnb-config
           configMap:
-            name: ueransim-gnb-config     
-        - name: ueransim-ue-config
+            name: 5gran-gnb-config     
+        - name: 5gran-ue-config
           configMap:
-            name: ueransim-ue-config 
+            name: 5gran-ue-config 
