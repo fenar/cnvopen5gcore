@@ -4,6 +4,6 @@ ran:
     repository: docker.io/efatnar/ueransim
     pullPolicy: IfNotPresent
     tag: "v1.5"
-  amf-ip: "172.27.103.86"
+  amf-ip: "172.27.103.99"
   amf-port: "30412"
   imsi: "imsi-208930000000003"
