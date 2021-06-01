@@ -17,7 +17,7 @@ data:
 
     # List of AMF address information
     amfConfigs:
-      - address: 172.27.103.94
+      - address: 172.27.103.93
         port: 30412
 
     # List of supported S-NSSAIs by this gNB
