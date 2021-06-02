@@ -1,3 +1,5 @@
+# RELEASE CUT: Release-1.0
+
 # 5G Core with RAN + UE simulator deployment on Red Hat Openshift with Service Mesh<br>
 
 Background: <br>
