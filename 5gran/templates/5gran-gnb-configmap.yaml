@@ -14,8 +14,8 @@ data:
     gtpIp: 0.0.0.0
     # List of AMF address information
     amfConfigs:
-      - address: 172.27.103.93
-        port: 30412
+      - address: {{ .Values.ran.amf.address }} 
+        port: {{ .Values.ran.amf.port }} 
     # List of supported S-NSSAIs by this gNB
     slices:
       - sst: 1
