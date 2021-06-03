@@ -9,4 +9,4 @@ ran:
     port: "30412"
   user:
     imsi: "imsi-208930000000001"
-  tac: "7"
+  tac: 7
