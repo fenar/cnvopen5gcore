@@ -58,6 +58,10 @@ ArgoCD 5GRAN
 
 PS: If you wonder from where to get the default ArgoCD admin password, here it is :-). <br>
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/argopasswd.png)<br>
+Alternatively you can get at cli:
+```
+oc get secret openshift-gitops-cluster -n openshift-gitops -o jsonpath='{.data.admin\.password}' | base64 -d
+```
 
 ----
 (5) Use ./3-delete5gran.sh to wipe ueransim microservices deployment
