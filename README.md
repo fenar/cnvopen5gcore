@@ -62,9 +62,7 @@ Alternatively you can get at cli:
 ```
 oc get secret openshift-gitops-cluster -n openshift-gitops -o jsonpath='{.data.admin\.password}' | base64 -d
 ```
-Adding More Target Clusters as target deployment environment. <br>
-
-<script src="https://gist.githubusercontent.com/fenar/bd2348fbd8c1fe37955534e97e910de5/raw/2ec43c526d0edc50c3943b03754508f7e7f81978/argocd-clusteraddon.md"></script>
+[>>> Adding More Target Clusters as target deployment environment](https://gist.github.com/fenar/bd2348fbd8c1fe37955534e97e910de5)<br>
 
 ----
 (5) Use ./3-delete5gran.sh to wipe ueransim microservices deployment
