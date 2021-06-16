@@ -2,8 +2,8 @@ apiVersion: security.openshift.io/v1
 kind: SecurityContextConstraints
 metadata:
   annotations:
-    kubernetes.io/description: 'super privileged scc for open5gs'
-  name: scc-open5gs
+    kubernetes.io/description: 'super privileged scc for open5gcore'
+  name: scc-open5gcore
 allowHostDirVolumePlugin: true
 allowHostIPC: true
 allowHostNetwork: true
@@ -30,8 +30,5 @@ supplementalGroups:
   type: RunAsAny
 volumes:
 - '*'
-# groups:
-# - system:cnfvendor
 users:
 - system:serviceaccount:open5gcore:default
-- system:serviceaccount:open5gran:default
