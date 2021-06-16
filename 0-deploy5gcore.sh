@@ -11,7 +11,7 @@ echo
 #oc adm policy add-scc-to-user hostmount-anyuid -z default 
 #oc adm policy add-scc-to-user privileged -z default 
 current_dir=$PWD
-oc create -f $current_dir/5gcore/scc-5gcore.yaml
+oc create -f 5gcore/scc-5gcore.yaml
 oc create secret generic mongodb-ca --from-file=$current_dir/5gcore/ca-tls-certificates/rds-combined-ca-bundle.pem
 oc get secret
 cd 5gcore
