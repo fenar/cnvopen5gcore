@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 #Author: fenar
 oc new-project open5gran
-#oc adm policy add-scc-to-user anyuid -z default -n open5gran
-#oc adm policy add-scc-to-user hostaccess -z default -n open5gran
-#oc adm policy add-scc-to-user hostmount-anyuid -z default -n open5gran
-#oc adm policy add-scc-to-user privileged -z default -n open5gran
+oc adm policy add-scc-to-user anyuid -z default -n open5gran
+oc adm policy add-scc-to-user hostaccess -z default -n open5gran
+oc adm policy add-scc-to-user hostmount-anyuid -z default -n open5gran
+oc adm policy add-scc-to-user privileged -z default -n open5gran
 current_dir=$PWD
-oc create -f 5gran/scc-5gran.yaml
 cd 5gran
 ## gNB Section
 echo "Preparing gNB config"
