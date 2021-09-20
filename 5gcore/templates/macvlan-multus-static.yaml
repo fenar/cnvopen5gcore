@@ -1,0 +1,6 @@
+apiVersion: k8s.cni.cncf.io/v1
+kind: NetworkAttachmentDefinition
+metadata:
+  name: macvlan-multus
+spec:
+  config: '{ "type": "macvlan", "mode": "bridge", "master": "ens224", "ipam": { "type": "static"} }'
