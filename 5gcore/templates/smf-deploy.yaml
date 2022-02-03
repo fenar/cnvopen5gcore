@@ -45,3 +45,16 @@ spec:
         - name: open5gs-smf-config
           configMap:
             name: open5gs-smf-config                
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: open5gs-smf-d
+spec:
+  maxReplicas: 7
+  minReplicas: 1
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: open5gs-smf-d
+  targetCPUUtilizationPercentage: 60
