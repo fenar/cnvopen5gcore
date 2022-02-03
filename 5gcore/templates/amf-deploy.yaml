@@ -112,7 +112,7 @@ metadata:
   name: open5gs-amf-d
 spec:
   maxReplicas: 7
-  minReplicas: 1
+  minReplicas: 2
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
