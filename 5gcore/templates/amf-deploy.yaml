@@ -27,7 +27,7 @@ spec:
     - destination:
         host: open5gs-amf
         port:
-          number: 80
+          number: 88
 ---          
 apiVersion: v1
 kind: Service
@@ -57,7 +57,7 @@ spec:
     epc-mode: amf
   ports:
     - protocol: TCP
-      port: 80
+      port: 88
       targetPort: 80
       nodePort: 30080    
 ---
