@@ -86,4 +86,4 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: open5gs-amf-d
-  targetCPUUtilizationPercentage: 60
+  targetCPUUtilizationPercentage: 40
