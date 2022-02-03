@@ -17,7 +17,7 @@ spec:
 apiVersion: "v1"
 kind: "LimitRange"
 metadata:
-  name: "resource-limits"
+  name: "resource-limits-container"
 spec:
   limits:
     - type: "Container"
