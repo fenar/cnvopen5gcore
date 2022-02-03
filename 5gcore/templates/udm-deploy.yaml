@@ -19,7 +19,7 @@ metadata:
   labels:
     epc-mode: udm
 spec:
-  replicas: 1
+  #replicas: 1
   selector:
     matchLabels:
       epc-mode: udm
