@@ -43,3 +43,16 @@ spec:
         - name: open5gs-ausf-config
           configMap:
             name: open5gs-ausf-config
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: open5gs-ausf-d
+spec:
+  maxReplicas: 7
+  minReplicas: 1
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: open5gs-ausf-d
+  targetCPUUtilizationPercentage: 60
