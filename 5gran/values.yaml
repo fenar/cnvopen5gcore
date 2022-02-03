@@ -5,7 +5,7 @@ ran:
     pullPolicy: IfNotPresent
     tag: "v1.5"
   amf:
-    address: 52.72.129.204
+    address: 10.0.145.35
     port: 30412
   user:
     imsi: "imsi-208930000000001"
