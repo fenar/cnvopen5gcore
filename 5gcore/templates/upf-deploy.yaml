@@ -45,7 +45,7 @@ spec:
             ip link set ogstun up;
             sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward";
             iptables -t nat -A POSTROUTING -s 10.45.0.0/16 ! -o ogstun -j MASQUERADE;
-            open5gs-upfd -d -c /open5gs/config-map/upf.yaml;
+            open5gs-upfd -c /open5gs/config-map/upf.yaml;
           volumeMounts:
           - name: open5gs-upf-config
             mountPath: /open5gs/config-map/upf.yaml
@@ -71,4 +71,4 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: open5gs-upf-d
-  targetCPUUtilizationPercentage: 40
+  targetCPUUtilizationPercentage: 60
