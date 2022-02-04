@@ -57,4 +57,4 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: open5gs-smf-d
-  targetCPUUtilizationPercentage: 70
+  targetCPUUtilizationPercentage: 60
