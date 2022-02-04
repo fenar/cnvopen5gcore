@@ -50,7 +50,6 @@ metadata:
   labels:
     epc-mode: amf
 spec:
-  replicas: 1
   selector:
     matchLabels:
       epc-mode: amf
