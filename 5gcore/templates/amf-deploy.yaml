@@ -82,10 +82,10 @@ kind: HorizontalPodAutoscaler
 metadata:
   name: open5gs-amf-d
 spec:
-  maxReplicas: 1
+  maxReplicas: 7
   minReplicas: 1
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
     name: open5gs-amf-d
-  targetCPUUtilizationPercentage: 60
+  targetCPUUtilizationPercentage: 65
