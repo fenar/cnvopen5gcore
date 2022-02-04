@@ -69,6 +69,8 @@ spec:
           - name: open5gs-amf-config
             mountPath: /open5gs/config-map/amf.yaml
             subPath: "amf.yaml"
+      nodeSelector:
+        amfnode: true
       volumes:
         - name: open5gs-amf-config
           configMap:
