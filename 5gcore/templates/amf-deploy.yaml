@@ -26,7 +26,7 @@ spec:
     epc-mode: amf
   ports:
     - protocol: TCP
-      port: 88
+      port: 80
       targetPort: 80
       nodePort: 30080    
 ---
@@ -50,13 +50,14 @@ metadata:
   labels:
     epc-mode: amf
 spec:
-  #replicas: 1
+  replicas: 1
   selector:
     matchLabels:
       epc-mode: amf
   template:
     metadata:
       annotations:
+        k8s.v1.cni.cncf.io/networks: '[{"name": "macvlan-multus", "ips": [ "192.168.100.201/24"]}]'
         sidecar.istio.io/inject: "true"
       labels:
         epc-mode: amf
