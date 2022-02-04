@@ -19,7 +19,7 @@ metadata:
   labels:
     epc-mode: smf
 spec:
-  #replicas: 1
+  replicas: 1
   selector:
     matchLabels:
       epc-mode: smf
@@ -44,7 +44,7 @@ spec:
       volumes:
         - name: open5gs-smf-config
           configMap:
-            name: open5gs-smf-config                
+            name: open5gs-smf-config         
 ---
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
