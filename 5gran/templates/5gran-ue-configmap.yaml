@@ -37,14 +37,14 @@ data:
           sst: 1
         emergency: false
 
-    # Configured NSSAI for this UE by HPLMN
+     # Configured NSSAI for this UE by HPLMN
     configured-nssai:
       - sst: 1
-        
+        sd: 1
     # Default Configured NSSAI for this UE
     default-nssai:
       - sst: 1
-
+        sd: 1
     # Supported encryption algorithms by this UE
     integrity:
       IA1: true
