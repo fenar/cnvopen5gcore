@@ -19,7 +19,6 @@ metadata:
   labels:
     epc-mode: smf
 spec:
-  replicas: 1
   selector:
     matchLabels:
       epc-mode: smf
