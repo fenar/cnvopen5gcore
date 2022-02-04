@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stress-test
+  namespace: stress-test
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: stress-test
+  template:
+    metadata:
+      labels:
+        app: stress-test
+    spec:
+      containers:
+        - name: stress-test
+          image: progrium/stress
+          command: ["/usr/bin/stress",
+               "--verbose",
+               "-c",
+               "2",
+               "--vm",
+               "2",
+               "--vm-bytes",
+               "512M"]
