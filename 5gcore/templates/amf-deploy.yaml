@@ -70,7 +70,7 @@ spec:
             mountPath: /open5gs/config-map/amf.yaml
             subPath: "amf.yaml"
       nodeSelector:
-        amfnode: true
+        amfnode: emblasoft
       volumes:
         - name: open5gs-amf-config
           configMap:
