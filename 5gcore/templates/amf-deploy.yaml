@@ -82,7 +82,7 @@ kind: HorizontalPodAutoscaler
 metadata:
   name: open5gs-amf-d
 spec:
-  maxReplicas: 7
+  maxReplicas: 1
   minReplicas: 1
   scaleTargetRef:
     apiVersion: apps/v1
