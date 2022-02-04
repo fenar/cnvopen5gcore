@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: stress-test
-          image: progrium/stress
+          image: efatnar/stress-test
           command: ["/usr/bin/stress",
                "--verbose",
                "-c",
