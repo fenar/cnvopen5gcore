@@ -65,7 +65,7 @@ spec:
         - name: amf
           image: "{{ .Values.open5gcore.image.repository }}:{{ .Values.open5gcore.image.tag }}"
           imagePullPolicy: {{ .Values.open5gcore.image.pullPolicy }}
-          command: ["open5gs-amfd", "-c", "/open5gs/config-map/amf.yaml"]
+          command: ["open5gs-amfd", "-d", "-c", "/open5gs/config-map/amf.yaml"]
           volumeMounts:
           - name: open5gs-amf-config
             mountPath: /open5gs/config-map/amf.yaml
@@ -86,4 +86,4 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: open5gs-amf-d
-  targetCPUUtilizationPercentage: 70
+  targetCPUUtilizationPercentage: 60
