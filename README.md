@@ -1,6 +1,6 @@
 # RELEASE CUT: Release-1.0
-This Release includes Open5g deployment on OCP with RH-OSSM with leveraging HPA for CNFs.<br>
-This Release does not include Multus! Multus is part of the Main branch for development and verification. Once that effort reaches stability we will have Release 2.0 cut. <br>
+>> This Release includes Open5g deployment on OCP with RH-OSSM with leveraging HPA for CNFs.<br>
+>> This Release does not include Multus! Multus is part of the Main branch for development and verification. Once that effort reaches stability we will have Release 2.0 cut. <br>
 
 # 5G Core with RAN + UE simulator deployment on Red Hat Openshift with Service Mesh<br>
 
