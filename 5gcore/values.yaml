@@ -25,3 +25,4 @@ k8s:
 cnf:
   amf:
     nodeport: 30412
+    port: 30412
