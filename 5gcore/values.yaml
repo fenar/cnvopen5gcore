@@ -27,3 +27,6 @@ cnf:
     sctp:
       nodeport: 30412
       port: 30412
+    http:
+      nodeport: 31412
+      port: 31412
