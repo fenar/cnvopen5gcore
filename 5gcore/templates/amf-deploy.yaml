@@ -10,9 +10,9 @@ spec:
     epc-mode: amf
   ports:
     - protocol: SCTP
-      port: 30412
+      port: {{ .Values.cnf.amf.port }}
       targetPort: 38412
-      nodePort: 30412
+      nodePort: {{ .Values.cnf.amf.nodeport }}
 ---
 apiVersion: v1
 kind: Service
@@ -56,7 +56,6 @@ spec:
   template:
     metadata:
       annotations:
-        cluster-autoscaler.kubernetes.io/safe-to-evict: "false"
         sidecar.istio.io/inject: "true"
       labels:
         epc-mode: amf
