@@ -10,9 +10,9 @@ spec:
     epc-mode: amf
   ports:
     - protocol: SCTP
-      port: {{ .Values.cnf.amf.port }}
+      port: {{ .Values.cnf.amf.sctp.port }}
       targetPort: 38412
-      nodePort: {{ .Values.cnf.amf.nodeport }}
+      nodePort: {{ .Values.cnf.amf.sctp.nodeport }}
 ---
 apiVersion: v1
 kind: Service
