@@ -20,4 +20,8 @@ amf:
   tac: 7
 
 k8s:
- interface: eth0
+  interface: eth0
+ 
+cnf:
+  amf:
+    nodeport: 30412
