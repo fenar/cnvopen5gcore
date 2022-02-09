@@ -28,5 +28,5 @@ cnf:
       nodeport: 30412
       port: 30412
     http:
-      nodeport: 31412
-      port: 31412
+      nodeport: 30080
+      port: 80
