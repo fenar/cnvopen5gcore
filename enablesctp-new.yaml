@@ -1,3 +1,4 @@
+# Ref: https://docs.openshift.com/container-platform/4.9/networking/using-sctp.html
 apiVersion: machineconfiguration.openshift.io/v1
 kind: MachineConfig
 metadata:
