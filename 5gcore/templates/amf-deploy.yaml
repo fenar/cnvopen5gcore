@@ -35,6 +35,9 @@ apiVersion: networking.k8s.io/v1
 metadata:
   name: allow-sctp
 spec:
+  podSelector:
+    matchLabels:
+      epc-mode: amf
   ingress:
   - ports:
     - protocol: SCTP
