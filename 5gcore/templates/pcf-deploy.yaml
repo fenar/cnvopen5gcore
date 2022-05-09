@@ -34,7 +34,7 @@ spec:
         - name: pcf
           image: "{{ .Values.open5gcore.image.repository }}:{{ .Values.open5gcore.image.tag }}"
           imagePullPolicy: {{ .Values.open5gcore.image.pullPolicy }}
-          command: ["open5gs-pcfd", "-c", "/open5gs/config-map/pcf.yaml"]
+          command: ["/open5gs/install/bin/open5gs-pcfd", "-c", "/open5gs/config-map/pcf.yaml"]
           volumeMounts:
           - name: open5gs-pcf-config
             mountPath: /open5gs/config-map/pcf.yaml
