@@ -76,9 +76,9 @@ spec:
     spec:    
       containers:
         - name: amf
-          image: "{{ .Values.open5gcore.image.repository }}:{{ .Values.open5gcore.image.tag }}"
+          image: "{{ .Values.open5gcore.image.repository }}:{{ .Values.open5gcore.image.oldtag }}"
           imagePullPolicy: {{ .Values.open5gcore.image.pullPolicy }}
-          command: ["/open5gs/install/bin/open5gs-amfd", "-c", "/open5gs/config-map/amf.yaml"]
+          command: ["open5gs-amfd", "-c", "/open5gs/config-map/amf.yaml"]
           volumeMounts:
           - name: open5gs-amf-config
             mountPath: /open5gs/config-map/amf.yaml
