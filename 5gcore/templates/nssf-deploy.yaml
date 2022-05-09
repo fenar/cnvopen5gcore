@@ -32,9 +32,9 @@ spec:
     spec:   
       containers:
         - name: nssf
-          image: "{{ .Values.open5gcore.image.repository }}:{{ .Values.open5gcore.image.tag }}"
+          image: "{{ .Values.open5gcore.image.repository }}:{{ .Values.open5gcore.image.oldtag }}"
           imagePullPolicy: {{ .Values.open5gcore.image.pullPolicy }}
-          command: ["/open5gs/install/bin/open5gs-nssfd", "-c", "/open5gs/config-map/nssf.yaml"]
+          command: ["open5gs-nssfd", "-c", "/open5gs/config-map/nssf.yaml"]
           volumeMounts:
           - name: open5gs-nssf-config
             mountPath: /open5gs/config-map/nssf.yaml
