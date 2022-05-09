@@ -34,7 +34,7 @@ spec:
         - name: udm
           image: "{{ .Values.open5gcore.image.repository }}:{{ .Values.open5gcore.image.tag }}"
           imagePullPolicy: {{ .Values.open5gcore.image.pullPolicy }}
-          command: ["open5gs-udmd", "-c", "/open5gs/config-map/udm.yaml"]
+          command: ["/open5gs/install/bin/open5gs-udmd", "-c", "/open5gs/config-map/udm.yaml"]
           volumeMounts:
           - name: open5gs-udm-config
             mountPath: /open5gs/config-map/udm.yaml
