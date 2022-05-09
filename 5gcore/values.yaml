@@ -5,6 +5,7 @@ open5gcore:
     repository: docker.io/efatnar/open5gcore
     pullPolicy: IfNotPresent
     tag: "v2.0"
+    oldtag: "v1.1"
 
 webui:
   image:
