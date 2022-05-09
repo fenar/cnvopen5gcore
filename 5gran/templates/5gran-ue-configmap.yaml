@@ -49,7 +49,6 @@ data:
         apn: 'internet'
         slice:
           sst: 1
-        emergency: false
 
      # Configured NSSAI for this UE by HPLMN
     configured-nssai:
