@@ -32,9 +32,9 @@ spec:
     spec:    
       containers:
         - name: ausf
-          image: "{{ .Values.open5gcore.image.repository }}:{{ .Values.open5gcore.image.tag }}"
+          image: "{{ .Values.open5gcore.image.repository }}:{{ .Values.open5gcore.image.oldtag }}"
           imagePullPolicy: {{ .Values.open5gcore.image.pullPolicy }}
-          command: ["/open5gs/install/bin/open5gs-ausfd", "-c", "/open5gs/config-map/ausf.yaml"]
+          command: ["open5gs-ausfd", "-c", "/open5gs/config-map/ausf.yaml"]
           volumeMounts:
           - name: open5gs-ausf-config
             mountPath: /open5gs/config-map/ausf.yaml
