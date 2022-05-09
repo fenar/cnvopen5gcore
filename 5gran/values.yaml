@@ -3,7 +3,7 @@ ran:
   image:
     repository: docker.io/efatnar/ueransim
     pullPolicy: IfNotPresent
-    tag: "v1.5"
+    tag: "v2.0"
   amf:
     address: 10.0.145.35
     port: 30412
