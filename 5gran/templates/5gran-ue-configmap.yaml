@@ -13,9 +13,9 @@ data:
     mnc: '93'
 
     # Permanent subscription key
-    key: '465B5CE8B199B49FAA5F0A2EE238A6BC'
+    key: '{{ .Values.ran.user.subscriptionKey }}'
     # Operator code (OP or OPC) of the UE
-    op: 'E8ED289DEBA952E4283B54E88E6183CA'
+    op: '{{ .Values.ran.user.opCode }}'
     # This value specifies the OP type and it can be either 'OP' or 'OPC'
     opType: 'OPC'
     # Authentication Management Field (AMF) value
