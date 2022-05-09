@@ -31,11 +31,11 @@ spec:
     spec:   
       containers:
       - name: smf
-        image: "{{ .Values.open5gcore.image.repository }}:{{ .Values.open5gcore.image.tag }}"
+        image: "{{ .Values.open5gcore.image.repository }}:{{ .Values.open5gcore.image.oldtag }}"
         imagePullPolicy: {{ .Values.open5gcore.image.pullPolicy }}
         command: ["/bin/sh", "-c"]
         args:
-        - /open5gs/install/bin/open5gs-smfd -c /open5gs/config-map/smf.yaml;
+        - open5gs-smfd -c /open5gs/config-map/smf.yaml;
         volumeMounts:
           - name: open5gs-smf-config
             mountPath: /open5gs/config-map/smf.yaml
