@@ -40,7 +40,10 @@ spec:
         image: "{{ .Values.ran.image.repository }}:{{ .Values.ran.image.tag }}"
         securityContext:
           privileged: true
-        command: ["/bin/sh","-c","sh nr-binder 10.45.0.2 curl google.com"]
+        command: ["/bin/sh","-c"]
+        args:
+          - echo "fenarx-101 tun-ip: $(ip addr show uesimtun0 | grep -Po 'inet \K[\d.]+')"; 
+            sh nr-binder  $(ip addr show uesimtun0 | grep -Po 'inet \K[\d.]+') curl google.com;
       volumes:
         - name: 5gran-gnb-config
           configMap:
