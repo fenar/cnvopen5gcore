@@ -23,7 +23,7 @@ amf:
 k8s:
   interface: eth0
   tun-interface: ogstun
- 
+  
 cnf:
   amf:
     sctp:
