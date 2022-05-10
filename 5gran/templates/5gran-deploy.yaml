@@ -42,7 +42,7 @@ spec:
           privileged: true
         command: ["/bin/sh","-c"]
         args:
-        - sh nr-binder $(ip addr show uesimtun0 | grep -Po 'inet \K[\d.]+') ping www.google.com;
+        - nr-binder $(ip addr show uesimtun0 | grep -Po 'inet \K[\d.]+') ping www.google.com;
       volumes:
         - name: 5gran-gnb-config
           configMap:
