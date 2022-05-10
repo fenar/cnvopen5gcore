@@ -40,7 +40,7 @@ spec:
         image: "{{ .Values.ran.image.repository }}:{{ .Values.ran.image.tag }}"
         securityContext:
           privileged: true
-        command: ["/bin/sh","-c","sh nr-binder $(ip addr show uesimtun0 | grep -Po 'inet \\K[\\d.]+') ping google.com"]
+        command: ["/bin/sh","-c","echo tunnel-ip: $(ip addr show uesimtun0 | grep -Po 'inet \\K[\\d.]+')","sh nr-binder $(ip addr show uesimtun0 | grep -Po 'inet \\K[\\d.]+') ping google.com"]
       volumes:
         - name: 5gran-gnb-config
           configMap:
