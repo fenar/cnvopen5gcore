@@ -41,7 +41,7 @@ spec:
         securityContext:
           privileged: true
         command: ["/bin/sh","-c"]
-        args: ["./nr-binder $(ip addr show uesimtun0 | grep -Po 'inet \K[\d.]+') curl google.com"]
+        args: ["./nr-binder ${ip addr show uesimtun0 | grep -Po 'inet \K[\d.]+'} curl google.com"]
       volumes:
         - name: 5gran-gnb-config
           configMap:
