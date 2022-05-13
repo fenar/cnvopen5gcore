@@ -1,7 +1,7 @@
 kind: SecurityContextConstraints
 apiVersion: v1
 metadata:
-  name: scc-admin
+  name: scc-5gcore-admin
 allowPrivilegedContainer: true
 runAsUser:
   type: RunAsAny
