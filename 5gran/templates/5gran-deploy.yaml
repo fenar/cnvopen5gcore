@@ -5,6 +5,7 @@ metadata:
   labels:
     epc-mode: 5gran
 spec:
+  securityContext: scc-5gran-admin
   replicas: 1
   selector:
     matchLabels:
