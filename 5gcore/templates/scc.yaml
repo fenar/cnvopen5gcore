@@ -11,5 +11,3 @@ fsGroup:
   type: RunAsAny
 supplementalGroups:
   type: RunAsAny
-users:
-- RunAsAny
