@@ -40,7 +40,6 @@ spec:
           args:
           - ln -s /dev/net/tun /dev/tun;
             ip tuntap add name ogstun mode tun;
-            ip link set dev ogstun mtu 1400;
             ip addr add 10.45.0.1/16 dev ogstun;
             sysctl -w net.ipv6.conf.all.disable_ipv6=1;
             ip link set ogstun up;
