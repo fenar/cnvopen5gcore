@@ -19,7 +19,7 @@ data:
         gtpc:
           dev: {{ .Values.k8s.interface }}
         gtpu:
-          dev: {{ .Values.k8s.tuninterface }}  
+          dev: {{ .Values.k8s.interface }} 
         subnet:
          - addr: 10.45.0.1/16
            dnn: {{ .Values.dnn }}
