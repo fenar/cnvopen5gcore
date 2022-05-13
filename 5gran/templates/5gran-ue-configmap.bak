@@ -27,6 +27,20 @@ data:
     # List of gNB IP addresses for Radio Link Simulation
     gnbSearchList:
       - 0.0.0.0
+      
+    # UAC Access Identities Configuration
+    uacAic:
+      mps: false
+      mcs: false
+      
+    # UAC Access Control Class
+    uacAcc:
+      normalClass: 0
+      class11: false
+      class12: false
+      class13: false
+      class14: false
+      class15: false
 
     # Initial PDU sessions to be established
     sessions:
