@@ -14,3 +14,4 @@ data:
         subnet:
           - addr: 10.45.0.1/16
             dnn: {{ .Values.dnn }}
+            dev: ogstun3
