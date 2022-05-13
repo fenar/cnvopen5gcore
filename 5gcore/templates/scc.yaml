@@ -12,4 +12,4 @@ fsGroup:
 supplementalGroups:
   type: RunAsAny
 users:
-- kubeadmin
+- RunAsAny
