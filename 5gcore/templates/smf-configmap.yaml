@@ -15,7 +15,7 @@ data:
         - addr: 0.0.0.0
           advertise: open5gs-smf
         pfcp:
-           dev: {{ .Values.k8s.interface }}
+          dev: {{ .Values.k8s.interface }}
         gtpc:
           dev: {{ .Values.k8s.interface }}
         gtpu:
