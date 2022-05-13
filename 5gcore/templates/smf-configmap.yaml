@@ -23,7 +23,6 @@ data:
         subnet:
          - addr: 10.45.0.1/16
            dnn: {{ .Values.dnn }}
-           dev: {{ .Values.k8s.tuninterface }} 
         dns:
           - 8.8.8.8
         mtu: 1400
