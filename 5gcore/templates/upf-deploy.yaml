@@ -44,7 +44,7 @@ spec:
             sysctl -w net.ipv6.conf.all.disable_ipv6=1;
             ip link set ogstun up;
             ip link set dev ogstun mtu 1400;
-            sh -c "echo 1 > /proc/sys/net/ipv4/ip_forward";
+            sysctl -w net.ipv4.ip_forward=1;
             iptables -t nat -A POSTROUTING -s 10.45.0.0/16 ! -o ogstun -j MASQUERADE;
             open5gs-upfd -c /open5gs/config-map/upf.yaml;
           volumeMounts:
