@@ -49,11 +49,7 @@ spec:
           privileged: true
         command: ["/bin/sh", "-c"]
         args:
-        - sysctl -w net.ipv6.conf.all.disable_ipv6=1;
-          ip link set uesimtun0 down;
-          ip link set dev uesimtun0 mtu 1400;
-          ip link set uesimtun0 down;
-          iptables -I INPUT -j ACCEPT;
+        - iptables -I INPUT -j ACCEPT;
           iptables -I FORWARD -j ACCEPT;
           iptables -I OUTPUT -j ACCEPT;
       volumes:
