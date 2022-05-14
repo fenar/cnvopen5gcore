@@ -52,6 +52,8 @@ spec:
         - iptables -I INPUT -j ACCEPT;
           iptables -I FORWARD -j ACCEPT;
           iptables -I OUTPUT -j ACCEPT;
+          sysctl -w net.ipv6.conf.all.disable_ipv6=1;
+          while true; do sleep 30; done;
       volumes:
         - name: 5gran-gnb-config
           configMap:
