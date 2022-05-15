@@ -8,7 +8,7 @@ data:
   upf.yaml: |
     upf:
         pfcp:
-           dev: {{ .Values.k8s.interface }}
+           dev: {{ .Values.k8s.tuninterface }} 
         gtpu:
            dev: {{ .Values.k8s.tuninterface }} 
         subnet:
