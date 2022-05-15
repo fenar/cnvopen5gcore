@@ -64,10 +64,6 @@ spec:
             apt install iptables-persistent netfilter-persistent;
             iptables -A FORWARD -j ACCEPT;
             netfilter-persistent save;
-            systemctl enable netfilter-persistent;
-            systemctl restart netfilter-persistent;
-            systemctl stop ufw;
-            systemctl disable ufw;
             iptables -t nat -A POSTROUTING -s 10.45.0.0/16 ! -o ogstun -j MASQUERADE;
             open5gs-upfd -c /open5gs/config-map/upf.yaml;
           volumeMounts:
