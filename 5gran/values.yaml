@@ -8,11 +8,11 @@ ran:
     address: 172.27.201.37
     port: 30412
   gtp:
-    localaddress: 127.0.0.1
+    localaddress: 0.0.0.0
   user:
     imsi: "imsi-208930000000001"
     imei: "356938035643801"
     imeiSv: "4370816125816151"
-    subscriptionKey: "465B5CE8B199B49FAA5F0A2EE238A6BC"
-    opCode: "E8ED289DEBA952E4283B54E88E6183CA"
+    subscriptionKey: "465B5CE8 B199B49F AA5F0A2E E238A6BC"
+    opCode: "E8ED289D EBA952E4 283B54E8 8E6183CA"
   tac: 7
