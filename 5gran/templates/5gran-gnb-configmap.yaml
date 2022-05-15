@@ -9,8 +9,8 @@ data:
     nci: '0x000000010'  # NR Cell Identity (36-bit)
     idLength: 32        # NR gNB ID length in bits [22...32]
     tac: {{ .Values.ran.tac }}             # Tracking Area Code
-    linkIp: {{ .Values.ran.upf.address }}
-    ngapIp: {{ .Values.ran.upf.address }}
+    linkIp: 0.0.0.0
+    ngapIp: 0.0.0.0
     gtpIp: {{ .Values.ran.upf.address }}
     # List of AMF address information
     amfConfigs:
