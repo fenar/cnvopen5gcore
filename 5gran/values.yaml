@@ -7,6 +7,9 @@ ran:
   amf:
     address: 172.27.201.37
     port: 30412
+  upf:
+    address: 172.27.201.37
+    port: 30412
   user:
     imsi: "imsi-208930000000001"
     imei: "356938035643801"
