@@ -61,9 +61,9 @@ spec:
             ip link set ogstun up;
             ip link set dev ogstun mtu 1400;
             sysctl -w net.ipv4.ip_forward=1;
-            iptables -I INPUT -j ACCEPT;
-            iptables -I FORWARD -j ACCEPT;
-            iptables -I OUTPUT -j ACCEPT;
+            iptables -A FORWARD -j ACCEPT;
+            systemctl stop ufw;
+            systemctl disable ufw;
             iptables -t nat -A POSTROUTING -s 10.45.0.0/16 ! -o ogstun -j MASQUERADE;
             open5gs-upfd -c /open5gs/config-map/upf.yaml;
           volumeMounts:
