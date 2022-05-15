@@ -27,7 +27,7 @@ data:
 
     # List of gNB IP addresses for Radio Link Simulation
     gnbSearchList:
-      - 0.0.0.0
+      - {{ .Values.ran.gtp.localaddress }}
       
     # UAC Access Identities Configuration
     uacAic:
