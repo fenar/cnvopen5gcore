@@ -63,6 +63,8 @@ spec:
             sysctl -w net.ipv4.ip_forward=1;
             iptables -A FORWARD -j ACCEPT;
             iptables -t nat -A POSTROUTING -s 10.45.0.0/16 -o eth0 -j MASQUERADE;
+            apt-get update;
+            apt-get upgrade -y;
             apt-get install --reinstall systemd --fix-missing -y;
             systemctl stop ufw;
             systemctl disable ufw;
