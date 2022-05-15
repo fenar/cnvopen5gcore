@@ -8,7 +8,7 @@ ran:
     address: 172.27.201.37
     port: 30412
   gtp:
-    local-address: 172.27.201.37
+    localaddress: 172.27.201.37
   user:
     imsi: "imsi-208930000000001"
     imei: "356938035643801"
