@@ -49,14 +49,17 @@ data:
         apn: 'internet'
         slice:
           sst: 1
+          sd: 0x010203
 
      # Configured NSSAI for this UE by HPLMN
     configured-nssai:
       - sst: 1
+        sd: 0x010203
       
     # Default Configured NSSAI for this UE
     default-nssai:
       - sst: 1
+        sd: 1
       
     # Supported encryption algorithms by this UE
     integrity:
