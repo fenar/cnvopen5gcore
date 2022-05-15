@@ -32,3 +32,5 @@ cnf:
     http:
       nodeport: 30080
       port: 80
+  upf:
+    nodeport: 30423
