@@ -39,5 +39,4 @@ data:
         amf_name: open5gs-amf
     nrf:
      sbi:
-       name: open5gs-nrf
-       domain: prod1-mesh.local
+       name: open5gs-nrf.prod1-mesh.local
