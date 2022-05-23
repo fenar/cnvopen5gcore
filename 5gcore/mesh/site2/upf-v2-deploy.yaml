@@ -1,0 +1,97 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: open5gs-upf
+  labels:
+    epc-mode: upf
+    version: v2
+spec:
+  selector:
+    epc-mode: upf
+  ports:
+    - protocol: UDP
+      port: 8805
+      targetPort: 8805    
+--- 
+apiVersion: v1
+kind: Service
+metadata:
+  name: open5gs-upf-np
+  labels:
+    epc-mode: upf
+    version: v2
+spec:
+  type: NodePort
+  selector:
+    epc-mode: upf
+  ports:
+    - protocol: UDP
+      port: 8805
+      targetPort: 8805
+      nodePort: 30423   
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: open5gs-upf-d
+  labels:
+    epc-mode: upf
+    version: v2
+spec:
+  #replicas: 1
+  selector:
+    matchLabels:
+      epc-mode: upf
+      version: v2
+  template:
+    metadata:
+      annotations:
+        sidecar.istio.io/inject: "false"
+      labels:
+        epc-mode: upf
+        version: v2
+    spec:   
+      containers:
+        - name: upf
+          image: "docker.io/efatnar/open5gcore:v1.1"
+          imagePullPolicy: IfNotPresent
+          securityContext:
+            privileged: true
+          command: ["/bin/sh", "-c"]
+          args:
+          - ln -s /dev/net/tun /dev/tun;
+            ip tuntap add name ogstun mode tun;
+            ip addr add 10.45.0.1/16 dev ogstun;
+            sysctl -w net.ipv6.conf.all.disable_ipv6=1;
+            ip link set ogstun up;
+            ip link set dev ogstun mtu 1400;
+            sysctl -w net.ipv4.ip_forward=1;
+            iptables -A FORWARD -j ACCEPT;
+            iptables -t nat -A POSTROUTING -s 10.45.0.0/16 -o eth0 -j MASQUERADE;
+            open5gs-upfd -c /open5gs/config-map/upf.yaml;
+          volumeMounts:
+          - name: open5gs-upf-config
+            mountPath: /open5gs/config-map/upf.yaml
+            subPath: "upf.yaml"
+          - mountPath: /dev/net/tun
+            name: dev-net-tun            
+      volumes:
+        - name: open5gs-upf-config
+          configMap:
+            name: open5gs-upf-config
+        - name: dev-net-tun
+          hostPath:
+            path: /dev/net/tun
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: open5gs-upf-d
+spec:
+  maxReplicas: 2
+  minReplicas: 1
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: open5gs-upf-d
+  targetCPUUtilizationPercentage: 80
