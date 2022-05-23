@@ -59,7 +59,7 @@ oc apply -f site2/prod2-smp.yaml
 oc apply -f site2/prod2-ess.yaml
 
 log "Installing VirtualService for prod-mesh"
-oc apply -n prod1-5gcore -f site1/prod1-vs-mirror-details.yaml
+oc apply -n prod1-5gcore -f site1/vs-mirror-details.yaml
 
 log "INSTALLATION COMPLETE
 #Run the following command in the prod-mesh to check the connection status:
