@@ -38,10 +38,10 @@ oc wait --for condition=Ready -n prod1-mesh smmr/default --timeout 300s
 log "Waiting for prod2-mesh installation to complete"
 oc wait --for condition=Ready -n prod2-mesh smmr/default --timeout 300s
 
-log "Installing AMF v2 service in prod2-mesh"
+log "Installing AMF CNF service in prod2-mesh"
 oc apply -n prod2-5gcore -f site2/prod2-amf-v2.yaml
 
-log "Installing 5gcore in prod1-mesh"
+log "Installing Full 5gcore in prod1-mesh"
 ./site1/deploy-prod1-5gcore.sh
 
 log "Retrieving Istio CA Root certificates"
