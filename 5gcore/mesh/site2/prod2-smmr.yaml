@@ -2,7 +2,7 @@ apiVersion: maistra.io/v1
 kind: ServiceMeshMemberRoll
 metadata:
   name: default
-  namespace: prod1-mesh
+  namespace: prod2-mesh
 spec:
   members:
-  - prod1-5gcore
+  - prod2-5gcore
