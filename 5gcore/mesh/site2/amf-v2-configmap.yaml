@@ -40,3 +40,4 @@ data:
     nrf:
      sbi:
        name: open5gs-nrf
+       domain: prod1-mesh.local
