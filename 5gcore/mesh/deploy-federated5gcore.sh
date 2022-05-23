@@ -39,7 +39,8 @@ log "Waiting for prod2-mesh installation to complete"
 oc wait --for condition=Ready -n prod2-mesh smmr/default --timeout 300s
 
 log "Installing AMF CNF service in prod2-mesh"
-oc apply -n prod2-5gcore -f site2/prod2-amf-v2.yaml
+oc apply -n prod2-5gcore -f site2/amf-v2-configmap.yaml
+oc apply -n prod2-5gcore -f site2/amf-v2-deploy.yaml
 
 log "Installing Full 5gcore in prod1-mesh"
 ./site1/deploy-prod1-5gcore.sh
