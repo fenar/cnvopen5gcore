@@ -51,13 +51,13 @@ PROD2_MESH_CERT=$(oc get configmap -n prod2-mesh istio-ca-root-cert -o jsonpath=
 
 log "Enabling federation for prod-mesh"
 sed "s:{{PROD2_MESH_CERT}}:$PROD2_MESH_CERT:g" prod1-mesh/prod2-mesh-ca-root-cert.yaml | oc apply -f -
-oc apply -f site1/prod1-smp.yaml
-oc apply -f site1/prod1-iss.yaml
+oc apply -f site1/smp.yaml
+oc apply -f site1/iss.yaml
 
 log "Enabling federation for prod2-mesh"
 sed "s:{{PROD1_MESH_CERT}}:$PROD1_MESH_CERT:g" prod2-mesh/prod1-mesh-ca-root-cert.yaml | oc apply -f -
-oc apply -f site2/prod2-smp.yaml
-oc apply -f site2/prod2-ess.yaml
+oc apply -f site2/smp.yaml
+oc apply -f site2/ess.yaml
 
 log "Installing VirtualService for prod-mesh"
 oc apply -n prod1-5gcore -f site1/vs-mirror-details.yaml
