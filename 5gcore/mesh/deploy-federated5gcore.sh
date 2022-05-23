@@ -48,7 +48,7 @@ oc apply -n prod2-5gcore -f site2/amf-v2-deploy.yaml
 oc apply -n prod2-5gcore -f site2/upf-v2-configmap.yaml
 oc apply -n prod2-5gcore -f site2/upf-v2-deploy.yaml
 
-
+# to do: switch context: oc config use-context prod1-cluster
 log "Installing Full 5gcore in prod1-mesh"
 ./site1/deploy-prod1-5gcore.sh
 
