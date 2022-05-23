@@ -12,23 +12,23 @@ data:
         - addr: 0.0.0.0
           advertise: open5gs-amf
         ngap:
-          dev: {{ .Values.k8s.interface }}
+          dev: eth0
         guami:
           - plmn_id:
-              mcc: {{ .Values.amf.mcc }}
-              mnc: {{ .Values.amf.mnc }}
+              mcc: 208
+              mnc: 93
             amf_id:
               region: 2
               set: 1
         tai:
           - plmn_id:
-              mcc: {{ .Values.amf.mcc }}
-              mnc: {{ .Values.amf.mnc }}
-            tac: {{ .Values.amf.tac }}
+              mcc: 208
+              mnc: 93
+            tac: 7
         plmn_support:
         - plmn_id:
-            mcc: {{ .Values.amf.mcc }}
-            mnc: {{ .Values.amf.mnc }}
+            mcc: 208
+            mnc: 93
           s_nssai:
           - sst: 1
         security:
