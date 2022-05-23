@@ -1,1 +1,17 @@
-
+kind: VirtualService
+apiVersion: networking.istio.io/v1alpha3
+metadata:
+  name: details
+  namespace: prod1-5gcore
+spec:
+  hosts:
+    - details.prod1-5gcore.svc.cluster.local
+  http:
+    - route:
+        - destination:
+            host: details.prod1-5gcore.svc.cluster.local
+            subset: v1
+          weight: 80
+        - destination:
+            host: details-v2.prod1-5gcore.svc.prod2-mesh-imports.local
+          weight: 20
