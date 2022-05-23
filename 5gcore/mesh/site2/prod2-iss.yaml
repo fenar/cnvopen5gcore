@@ -1,0 +1,15 @@
+apiVersion: federation.maistra.io/v1
+kind: ImportedServiceSet
+metadata:
+  name: prod2-mesh
+  namespace: prod1-mesh
+spec:
+  importRules:
+    - importAsLocal: false
+      nameSelector:
+        alias:
+          name: details-v2
+          namespace: prod1-5gcore
+        name: details
+        namespace: prod2-5gcore
+      type: NameSelector

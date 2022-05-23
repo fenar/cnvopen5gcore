@@ -1,0 +1,10 @@
+
+   
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: prod2-mesh-ca-root-cert
+  namespace: prod1-mesh
+data:
+  root-cert.pem: |-
+    {{STAGE_MESH_CERT}}
