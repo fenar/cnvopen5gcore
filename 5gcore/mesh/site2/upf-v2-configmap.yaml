@@ -9,9 +9,9 @@ data:
   upf.yaml: |
     upf:
         pfcp:
-           dev: {{ .Values.k8s.tuninterface }} 
+           dev: eth0
         gtpu:
-           dev: {{ .Values.k8s.tuninterface }} 
+           dev: ogstun
         subnet:
           - addr: 10.45.0.1/16
-            dnn: {{ .Values.dnn }}
+            dnn: internet
