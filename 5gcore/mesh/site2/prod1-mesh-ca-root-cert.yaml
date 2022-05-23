@@ -3,8 +3,8 @@
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: prod2-mesh-ca-root-cert
-  namespace: prod1-mesh
+  name: prod1-mesh-ca-root-cert
+  namespace: prod2-mesh
 data:
   root-cert.pem: |-
-    {{STAGE_MESH_CERT}}
+    {{PROD_MESH_CERT}}
