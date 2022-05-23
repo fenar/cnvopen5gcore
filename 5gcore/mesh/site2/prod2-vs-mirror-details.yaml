@@ -2,15 +2,15 @@ kind: VirtualService
 apiVersion: networking.istio.io/v1alpha3
 metadata:
   name: details
-  namespace: prod1-5gcore
+  namespace: prod2-5gcore
 spec:
   hosts:
-    - details.prod1-5gcore.svc.cluster.local
+    - details.prod2-5gcore.svc.cluster.local
   http:
     - mirror:
-        host: details-v2.prod1-5gcore.svc.prod2-mesh-imports.local
+        host: details-v1.prod2-5gcore.svc.prod1-mesh-imports.local
       route:
         - destination:
-            host: details.prod1-5gcore.svc.cluster.local
+            host: details.prod2-5gcore.svc.cluster.local
             subset: v1
           weight: 100
