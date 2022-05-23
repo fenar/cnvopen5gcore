@@ -68,8 +68,8 @@ spec:
     spec:    
       containers:
         - name: amf
-          image: "{{ .Values.open5gcore.image.repository }}:{{ .Values.open5gcore.image.tag }}"
-          imagePullPolicy: {{ .Values.open5gcore.image.pullPolicy }}
+          image: "docker.io/efatnar/open5gcore:v1.1"
+          imagePullPolicy: IfNotPresent
           command: ["open5gs-amfd", "-d", "-c", "/open5gs/config-map/amf.yaml"]
           volumeMounts:
           - name: open5gs-amf-config
