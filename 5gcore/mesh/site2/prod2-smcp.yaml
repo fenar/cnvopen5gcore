@@ -1,11 +1,11 @@
 apiVersion: maistra.io/v2
 kind: ServiceMeshControlPlane
 metadata:
-  namespace: prod1-mesh
-  name: prod1-mesh
+  namespace: prod2-mesh
+  name: prod2-mesh
 spec:
   cluster:
-    name: production-cluster
+    name: production2-cluster
   addons:
     grafana:
       enabled: true
@@ -38,12 +38,12 @@ spec:
       stage-mesh-egress:
         enabled: true
         requestedNetworkView:
-        - network-stage-mesh
+        - network-prod1-mesh
         routerMode: sni-dnat
         service:
           metadata:
             labels:
-              federation.maistra.io/egress-for: prod2-mesh
+              federation.maistra.io/egress-for: prod1-mesh
           ports:
           - port: 15443
             name: tls
@@ -57,7 +57,7 @@ spec:
           type: ClusterIP
           metadata:
             labels:
-              federation.maistra.io/ingress-for: prod2-mesh
+              federation.maistra.io/ingress-for: prod1-mesh
           ports:
           - port: 15443
             name: tls
@@ -65,4 +65,4 @@ spec:
             name: https-discovery  #note HTTPS here
   security:
     trust:
-      domain: prod1-mesh.local
+      domain: prod2-mesh.local
