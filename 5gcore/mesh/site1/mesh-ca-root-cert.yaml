@@ -7,4 +7,4 @@ metadata:
   namespace: prod1-mesh
 data:
   root-cert.pem: |-
-    {{STAGE_MESH_CERT}}
+    {{PROD2_MESH_CERT}}
