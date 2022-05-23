@@ -1,0 +1,68 @@
+apiVersion: maistra.io/v2
+kind: ServiceMeshControlPlane
+metadata:
+  namespace: prod1-mesh
+  name: prod1-mesh
+spec:
+  cluster:
+    name: production-cluster
+  addons:
+    grafana:
+      enabled: true
+    jaeger:
+      install:
+        storage:
+          type: Memory
+    kiali:
+      enabled: true
+    prometheus:
+      enabled: true
+  policy:
+    type: Istiod
+  telemetry:
+    type: Istiod
+  tracing:
+    sampling: 10000
+    type: Jaeger
+  version: v2.1
+  runtime:
+    defaults:
+      container:
+        imagePullPolicy: Always
+  proxy:
+    accessLogging:
+      file:
+        name: /dev/stdout        
+  gateways:
+    additionalEgress:
+      stage-mesh-egress:
+        enabled: true
+        requestedNetworkView:
+        - network-stage-mesh
+        routerMode: sni-dnat
+        service:
+          metadata:
+            labels:
+              federation.maistra.io/egress-for: prod2-mesh
+          ports:
+          - port: 15443
+            name: tls
+          - port: 8188
+            name: http-discovery  #note HTTP here
+    additionalIngress:
+      stage-mesh-ingress:
+        enabled: true
+        routerMode: sni-dnat
+        service:
+          type: ClusterIP
+          metadata:
+            labels:
+              federation.maistra.io/ingress-for: prod2-mesh
+          ports:
+          - port: 15443
+            name: tls
+          - port: 8188
+            name: https-discovery  #note HTTPS here
+  security:
+    trust:
+      domain: prod1-mesh.local
