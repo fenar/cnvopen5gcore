@@ -8,7 +8,7 @@ spec:
     - details.prod2-5gcore.svc.cluster.local
   http:
     - mirror:
-        host: details-v1.prod2-5gcore.svc.prod1-mesh-imports.local
+        host: details-v2.prod2-5gcore.svc.prod1-mesh-imports.local
       route:
         - destination:
             host: details.prod2-5gcore.svc.cluster.local
