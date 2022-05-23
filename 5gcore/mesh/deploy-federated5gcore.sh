@@ -19,7 +19,7 @@ log "Installing control plane for prod-mesh"
 oc apply -f site1/smcp.yaml
 oc apply -f site1/smmr.yaml
 
-log "Creating projects for stage-mesh"
+log "Creating projects for prod2-mesh"
 oc new-project prod2-mesh || true
 oc new-project prod2-5gcore|| true
 
@@ -28,7 +28,7 @@ oc adm policy add-scc-to-user hostaccess -z default
 oc adm policy add-scc-to-user hostmount-anyuid -z default 
 oc adm policy add-scc-to-user privileged -z default 
 
-log "Installing control plane for stage-mesh"
+log "Installing control plane for prod2-mesh"
 oc apply -f site2/smcp.yaml
 oc apply -f site2/smmr.yaml
 
@@ -64,10 +64,10 @@ oc apply -n prod1-5gcore -f site1/prod1-vs-mirror-details.yaml
 log "INSTALLATION COMPLETE
 #Run the following command in the prod-mesh to check the connection status:
   oc -n prod1-mesh get servicemeshpeer prod2-mesh -o json | jq .status
-#Run the following command to check the connection status in stage-mesh:
+#Run the following command to check the connection status in prod2-mesh:
   oc -n prod2-mesh get servicemeshpeer prod1-mesh -o json | jq .status
-#Check if services from stage-mesh are imported into prod-mesh:
+#Check if services from prod2-mesh are imported into prod-mesh:
   oc -n prod1-mesh get importedservicesets prod2-mesh -o json | jq .status
-#Check if services from stage-mesh are exported:
+#Check if services from prod2-mesh are exported:
   oc -n prod2-mesh get exportedservicesets prod1-mesh -o json | jq .status
 "
