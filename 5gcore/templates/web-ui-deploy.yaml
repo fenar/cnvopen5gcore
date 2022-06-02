@@ -5,7 +5,6 @@ metadata:
   labels:
     epc-mode: webui
 spec:
-  host: open5gcoreweb-open5gcore.apps.acmhub.narlabs.io
   to:
     kind: Service
     name: open5gs-webui
