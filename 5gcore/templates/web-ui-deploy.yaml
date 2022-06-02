@@ -1,33 +1,21 @@
-apiVersion: networking.istio.io/v1alpha3
-kind: Gateway
+kind: Route
+apiVersion: route.openshift.io/v1
 metadata:
-  name: open5gswebui-gateway
+  name: open5gcoreweb
+  labels:
+    epc-mode: webui
 spec:
-  selector:
-    istio: ingressgateway # use Istio default gateway implementation
-  servers:
-  - port:
-      number: 80
-      name: http
-      protocol: HTTP
-    hosts:
-    - "*"
----
-apiVersion: networking.istio.io/v1alpha3
-kind: VirtualService
-metadata:
-  name: open5gswebui-ingress
-spec:
-  hosts:
-  - "*"
-  gateways:
-  - open5gswebui-gateway
-  http:
-  - route:
-    - destination:
-        host: open5gs-webui
-        port:
-          number: 80
+  host: open5gcoreweb-open5gcore.apps.acmhub.narlabs.io
+  to:
+    kind: Service
+    name: open5gs-webui
+    weight: 100
+  port:
+    targetPort: 3000
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Allow
+  wildcardPolicy: None
 ---
 apiVersion: v1
 kind: Service
