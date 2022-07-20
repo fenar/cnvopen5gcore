@@ -3,4 +3,4 @@ kind: NetworkAttachmentDefinition
 metadata:
   name: macvlan-multus
 spec:
-  config: '{ "type": "macvlan", "mode": "bridge", "master": "ens224", "ipam": { "type": "static"} }'
+  config: '{ "cniVersion": "0.3.0", "type": "macvlan", "mode": "bridge", "master": "ens224", "ipam": { "type": "static"} }'
