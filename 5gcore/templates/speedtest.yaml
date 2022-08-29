@@ -1,0 +1,49 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: speed-test
+  namespace: i2i-5gcore
+spec:
+  to:
+    kind: Service
+    name: speed-test
+    weight: 100
+  port:
+    targetPort: 80
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: speed-test
+spec:
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  selector:
+    app: speed-test
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    name: speed-test
+  name: speed-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: speed-test
+  template:
+    metadata:
+      labels:
+        name: speed-test
+        app: speed-test
+    spec:
+      containers:
+      - image: adolfintel/speedtest:latest
+        name: speed-test
+        command: [ "/bin/bash", "-c", "--" ]
+        args: [ "MODE=standalone WEBPORT=80; /entrypoint.sh;" ]
+        ports:
+        - containerPort: 80
