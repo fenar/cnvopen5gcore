@@ -21,7 +21,7 @@ spec:
       port: 80
       targetPort: 80
   selector:
-    app: speed-test
+    name: speed-test
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -38,7 +38,6 @@ spec:
     metadata:
       labels:
         name: speed-test
-        app: speed-test
     spec:
       containers:
       - image: adolfintel/speedtest:latest
