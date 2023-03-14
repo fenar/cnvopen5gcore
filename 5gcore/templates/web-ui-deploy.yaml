@@ -57,7 +57,7 @@ spec:
   template:
     metadata:
       annotations:
-        k8s.v1.cni.cncf.io/networks: '[{"name": "macvlan-multus", "ips": [ "192.168.100.203/24"]}]'
+        k8s.v1.cni.cncf.io/networks: '[{"name": "macvlan-multus", "ips": [ "192.168.1.203/24"]}]'
         sidecar.istio.io/inject: "true"
       labels:
         epc-mode: webui
