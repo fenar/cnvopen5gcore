@@ -69,7 +69,6 @@ spec:
   template:
     metadata:
       annotations:
-        cluster-autoscaler.kubernetes.io/safe-to-evict: "false"
         sidecar.istio.io/inject: "true"
       labels:
         epc-mode: amf
