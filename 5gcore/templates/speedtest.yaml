@@ -2,7 +2,6 @@ kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
   name: speed-test
-  namespace: i2i-5gcore
 spec:
   to:
     kind: Service
