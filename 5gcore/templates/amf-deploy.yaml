@@ -69,6 +69,7 @@ spec:
   template:
     metadata:
       annotations:
+        openshift.io/required-scc: "scc-admin"
         sidecar.istio.io/inject: "true"
       labels:
         epc-mode: amf
