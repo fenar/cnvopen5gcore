@@ -20,6 +20,8 @@ spec:
       - name: gnb
         imagePullPolicy: {{ .Values.ran.image.pullPolicy }}
         image: "{{ .Values.ran.image.repository }}:{{ .Values.ran.image.tag }}" 
+        securityContext:
+          privileged: true
         command: ["/bin/sh","-c","./nr-gnb -c /open5gs/config-map/5gran-gnb-configmap.yaml"]
         volumeMounts:
           - name: 5gran-gnb-config
@@ -41,16 +43,6 @@ spec:
         securityContext:
           privileged: true
         command: ["/bin/sh","-c","sh nr-binder $(ip addr show uesimtun0 | grep -Po 'inet \\K[\\d.]+') ping google.com"]
-      - name: debug
-        imagePullPolicy: {{ .Values.ran.image.pullPolicy }}
-        image: quay.io/wcaban/net-toolbox:latest
-        securityContext:
-          privileged: true
-        command: ["/bin/sh", "-c"]
-        args:
-        - iptables -I INPUT -i uesimtun0 -j ACCEPT;
-          sysctl -w net.ipv6.conf.all.disable_ipv6=1;
-          while true; do sleep 30; done;
       volumes:
         - name: 5gran-gnb-config
           configMap:
