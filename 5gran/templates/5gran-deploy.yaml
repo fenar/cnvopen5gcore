@@ -5,7 +5,6 @@ metadata:
   labels:
     epc-mode: 5gran
 spec:
-  #securityContext: scc-5gran-admin
   replicas: 1
   selector:
     matchLabels:
@@ -13,7 +12,6 @@ spec:
   template:
     metadata:
       annotations:
-        openshift.io/required-scc: "scc-admin"
         sidecar.istio.io/inject: "false"
       labels:
         epc-mode: 5gran
@@ -22,8 +20,6 @@ spec:
       - name: gnb
         imagePullPolicy: {{ .Values.ran.image.pullPolicy }}
         image: "{{ .Values.ran.image.repository }}:{{ .Values.ran.image.tag }}" 
-        securityContext:
-          privileged: true
         command: ["/bin/sh","-c","./nr-gnb -c /open5gs/config-map/5gran-gnb-configmap.yaml"]
         volumeMounts:
           - name: 5gran-gnb-config
@@ -44,12 +40,17 @@ spec:
         image: "{{ .Values.ran.image.repository }}:{{ .Values.ran.image.tag }}"
         securityContext:
           privileged: true
+        command: ["/bin/sh","-c","sh nr-binder $(ip addr show uesimtun0 | grep -Po 'inet \\K[\\d.]+') ping google.com"]
+      - name: debug
+        imagePullPolicy: {{ .Values.ran.image.pullPolicy }}
+        image: quay.io/wcaban/net-toolbox:latest
+        securityContext:
+          privileged: true
         command: ["/bin/sh", "-c"]
-          args:
-          - ln -s /dev/net/tun /dev/tun;
-            ip tuntap add name uesimtun0 mode tun;
-            ip link set uesimtun0 up;
-            nr-binder $(ip addr show uesimtun0 | grep -Po 'inet \\K[\\d.]+') ping google.com;
+        args:
+        - iptables -I INPUT -i uesimtun0 -j ACCEPT;
+          sysctl -w net.ipv6.conf.all.disable_ipv6=1;
+          while true; do sleep 30; done;
       volumes:
         - name: 5gran-gnb-config
           configMap:
