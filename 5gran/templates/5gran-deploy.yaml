@@ -48,7 +48,7 @@ spec:
         command: ["/bin/sh", "-c"]
           args:
           - ln -s /dev/net/tun /dev/tun;
-            ip tuntap add name ogstun mode tun;
+            ip tuntap add name uesimtun0 mode tun;
             nr-binder $(ip addr show uesimtun0 | grep -Po 'inet \\K[\\d.]+') ping google.com;
       volumes:
         - name: 5gran-gnb-config
