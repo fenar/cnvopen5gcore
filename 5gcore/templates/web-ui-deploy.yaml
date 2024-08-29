@@ -56,7 +56,6 @@ spec:
       epc-mode: webui
   template:
     metadata:
-      annotations:
       labels:
         epc-mode: webui
     spec:    
