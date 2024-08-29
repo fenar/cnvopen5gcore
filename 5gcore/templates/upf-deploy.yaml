@@ -42,7 +42,6 @@ spec:
   template:
     metadata:
       annotations:
-        openshift.io/required-scc: "scc-admin"
         sidecar.istio.io/inject: "false"
       labels:
         epc-mode: upf
