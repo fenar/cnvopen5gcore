@@ -47,16 +47,3 @@ spec:
   resources:
     requests:
       storage: 20Gi
----
-apiVersion: autoscaling/v1
-kind: HorizontalPodAutoscaler
-metadata:
-  name: open5gs-mongodb-d
-spec:
-  maxReplicas: 7
-  minReplicas: 1
-  scaleTargetRef:
-    apiVersion: apps/v1
-    kind: Deployment
-    name: open5gs-mongodb-d
-  targetCPUUtilizationPercentage: 90
