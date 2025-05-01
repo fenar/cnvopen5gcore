@@ -1,9 +1,8 @@
-kind: SecurityContextConstraints
 apiVersion: security.openshift.io/v1
+kind: SecurityContextConstraints
 metadata:
   name: scc-admin
 allowPrivilegedContainer: true
-allowHostDirVolumePlugin: true
 runAsUser:
   type: RunAsAny
 seLinuxContext:
@@ -13,6 +12,8 @@ fsGroup:
 supplementalGroups:
   type: RunAsAny
 users:
+- system:serviceaccount:open5gcore:scc-admin-sa
+- system:serviceaccount:open5gcore:default
 - my-admin-user
 groups:
 - my-admin-group
