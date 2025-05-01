@@ -12,23 +12,7 @@ spec:
     - protocol: SCTP
       port: {{ .Values.cnf.amf.sctp.port }}
       targetPort: 38412
-      nodePort: {{ .Values.cnf.amf.sctp.nodeport }}
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: open5gs-amf
-  labels:
-    epc-mode: amf
-spec:
-  type: NodePort
-  selector:
-    epc-mode: amf
-  ports:
-    - protocol: TCP
-      port: {{ .Values.cnf.amf.http.port }}
-      targetPort: 80
-      nodePort: {{ .Values.cnf.amf.http.nodeport }}    
+      nodePort: {{ .Values.cnf.amf.sctp.nodeport }} 
 ---
 kind: NetworkPolicy
 apiVersion: networking.k8s.io/v1
