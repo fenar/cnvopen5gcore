@@ -27,8 +27,8 @@ data:
           - 8.8.8.8
         mtu: 1400
     nrf:
-     sbi:
-      name: open5gs-nrf 
+      sbi:
+        name: open5gs-nrf 
     upf:
       pfcp:
         - name: open5gs-upf
