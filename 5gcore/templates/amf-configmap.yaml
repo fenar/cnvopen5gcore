@@ -37,5 +37,5 @@ data:
             full: Open5GS
         amf_name: open5gs-amf
     nrf:
-     sbi:
-       name: open5gs-nrf
+      sbi:
+        name: open5gs-nrf
