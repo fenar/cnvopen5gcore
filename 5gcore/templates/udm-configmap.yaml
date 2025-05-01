@@ -13,5 +13,5 @@ data:
       - addr: 0.0.0.0
         advertise: open5gs-udm
     nrf:
-     sbi:
-      name: open5gs-nrf
+      sbi:
+        name: open5gs-nrf
