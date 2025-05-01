@@ -6,8 +6,6 @@ metadata:
     epc-mode: nrf
 data:
   nrf.yaml: |
-    #logger:
-       #file: /var/log/open5gs/nrf.log
     nrf:
       sbi:
         name: open5gs-nrf
