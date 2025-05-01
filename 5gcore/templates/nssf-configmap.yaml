@@ -18,5 +18,5 @@ data:
         s_nssai:
           sst: 1        
     nrf:
-     sbi:
-      name: open5gs-nrf
+      sbi:
+        name: open5gs-nrf
