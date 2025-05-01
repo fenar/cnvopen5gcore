@@ -27,7 +27,7 @@ spec:
     metadata:
       annotations:
         openshift.io/required-scc: "scc-admin"
-        sidecar.istio.io/inject: "true"
+        sidecar.istio.io/inject: "false"
       labels:
         epc-mode: nrf
     spec:  
