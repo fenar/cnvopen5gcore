@@ -1,3 +1,5 @@
+
+
 # 5G Core with RAN + UE simulator deployment on Red Hat Openshift with Service Mesh<br>
 
 Background: <br>
@@ -24,7 +26,7 @@ oc get nodes
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/Open5GCoreServiceMesh2.png)<br>
 
 ----
-(2) Provision user equipment (UE) imsi (see ueransim/ueransim-ue-configmap.yaml, defaul imsi is 208930000000001) to 5gcore so your ue registration (ie running ueransim ue mode) will be allowed.
+(2) Provision user equipment (UE) imsi (see 5gran/templates/5gran-ue-configmap.yaml, defaul imsi is 208930000000001) to 5gcore so your ue registration (ie running ueransim ue mode) will be allowed.
 ![alt text](https://raw.githubusercontent.com/fenar/cnvopen5gcore/main/pics/Open5GSWebUI.png)<br>
 
 ----
